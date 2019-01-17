@@ -1,9 +1,9 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
+import { HelmetDatoCms } from 'gatsby-source-datocms'
+import React from 'react'
 
-const About = ({ data: { about } }) => (
+export const About: React.FC = ({ data: { about } }: any) => (
   <article className="sheet">
     <HelmetDatoCms seo={about.seoMetaTags} />
     <div className="sheet__inner">
@@ -22,9 +22,7 @@ const About = ({ data: { about } }) => (
   </article>
 )
 
-export default About
-
-export const query = graphql`
+export const ABOUT_QUERY = graphql`
   query AboutQuery {
     about: datoCmsAboutPage {
       seoMetaTags {

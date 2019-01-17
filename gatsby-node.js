@@ -1,5 +1,4 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -19,7 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
       result.data.allDatoCmsWork.edges.map(({ node: work }) => {
         createPage({
           path: `works/${work.slug}`,
-          component: path.resolve(`./src/templates/work.js`),
+          component: path.resolve(`./src/templates/work.tsx`),
           context: {
             slug: work.slug,
           },
