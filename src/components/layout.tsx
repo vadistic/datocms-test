@@ -2,6 +2,37 @@ import { graphql, Link, StaticQuery } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import React from 'react'
 
+export const LAYOUT_QUERY = graphql`
+  query LayoutQuery {
+    datoCmsSite {
+      globalSeo {
+        siteName
+      }
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
+      }
+    }
+    datoCmsHome {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+      introTextNode {
+        childMarkdownRemark {
+          html
+        }
+      }
+      copyright
+    }
+    allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
+      edges {
+        node {
+          profileType
+          url
+        }
+      }
+    }
+  }
+`
 export const Layout: React.FC = ({ children }) => (
   <StaticQuery query={LAYOUT_QUERY}>
     {(data: any) => (
@@ -65,35 +96,3 @@ export const Layout: React.FC = ({ children }) => (
     )}
   </StaticQuery>
 )
-
-export const LAYOUT_QUERY = graphql`
-  query LayoutQuery {
-    datoCmsSite {
-      globalSeo {
-        siteName
-      }
-      faviconMetaTags {
-        ...GatsbyDatoCmsFaviconMetaTags
-      }
-    }
-    datoCmsHome {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
-      }
-      introTextNode {
-        childMarkdownRemark {
-          html
-        }
-      }
-      copyright
-    }
-    allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
-      edges {
-        node {
-          profileType
-          url
-        }
-      }
-    }
-  }
-`

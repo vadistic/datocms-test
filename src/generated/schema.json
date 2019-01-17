@@ -1493,7 +1493,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsModelFieldsInputObject_2",
+                  "name": "datoCmsModelFieldsQueryList_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -2333,7 +2333,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsWorkGalleryInputObject_2",
+                  "name": "datoCmsWorkGalleryQueryList_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -2598,16 +2598,6 @@
                 "defaultValue": null
               },
               {
-                "name": "excerpt",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "excerptQueryString_3",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
                 "name": "rawMarkdownBody",
                 "description": null,
                 "type": {
@@ -2623,6 +2613,16 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "htmlQueryString_3",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "excerpt",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "excerptQueryString_3",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -2795,12 +2795,6 @@
           },
           {
             "name": "id",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "parent",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -3573,16 +3567,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "sitePageConnectionPluginCreatorPackageJsonInputObject",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "parent",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "sitePageConnectionPluginCreatorParentQueryString",
               "ofType": null
             },
             "defaultValue": null
@@ -5641,85 +5625,6 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "sitePageConnectionPluginCreatorPackageJsonKeywordsQueryList",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "sitePageConnectionPluginCreatorParentQueryString",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -7892,12 +7797,6 @@
             "deprecationReason": null
           },
           {
-            "name": "parent",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "internal___type",
             "description": null,
             "isDeprecated": false,
@@ -7988,12 +7887,6 @@
           },
           {
             "name": "id",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "parent",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -8314,12 +8207,6 @@
           },
           {
             "name": "packageJson___keywords",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "parent",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -11167,12 +11054,6 @@
             "deprecationReason": null
           },
           {
-            "name": "parent",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "internal___contentDigest",
             "description": null,
             "isDeprecated": false,
@@ -11317,12 +11198,6 @@
           },
           {
             "name": "packageJson___keywords",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "parent",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -14560,7 +14435,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsModelConnectionFieldsInputObject_2",
+              "name": "datoCmsModelConnectionFieldsQueryList_2",
               "ofType": null
             },
             "defaultValue": null
@@ -15648,6 +15523,27 @@
                 "name": "Boolean",
                 "ofType": null
               }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsModelConnectionFieldsQueryList_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsModelConnectionFieldsInputObject_2",
+              "ofType": null
             },
             "defaultValue": null
           }
@@ -19278,6 +19174,16 @@
                   "ofType": null
                 },
                 "defaultValue": "false"
+              },
+              {
+                "name": "format",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "ExcerptFormats",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -19449,18 +19355,6 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "_PARENT",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -19476,6 +19370,29 @@
         "inputFields": null,
         "interfaces": null,
         "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "ExcerptFormats",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "PLAIN",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "HTML",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
         "possibleTypes": null
       },
       {
@@ -31325,6 +31242,12 @@
             "deprecationReason": null
           },
           {
+            "name": "seoSettings___twitterCard",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "seoMetaTags___NODE",
             "description": null,
             "isDeprecated": false,
@@ -34241,6 +34164,16 @@
               "ofType": null
             },
             "defaultValue": null
+          },
+          {
+            "name": "twitterCard",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsHomeConnectionSeoSettingsTwitterCardQueryString_2",
+              "ofType": null
+            },
+            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -34329,6 +34262,85 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "datoCmsHomeConnectionSeoSettingsDescriptionQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomeConnectionSeoSettingsTwitterCardQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35966,6 +35978,18 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "twitterCard",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -36070,6 +36094,12 @@
             "deprecationReason": null
           },
           {
+            "name": "seoSettings___twitterCard",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "seoMetaTags___NODE",
             "description": null,
             "isDeprecated": false,
@@ -36166,6 +36196,12 @@
           },
           {
             "name": "seoSettings___description",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "seoSettings___twitterCard",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -46656,7 +46692,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsWorkConnectionGalleryInputObject_2",
+              "name": "datoCmsWorkConnectionGalleryQueryList_2",
               "ofType": null
             },
             "defaultValue": null
@@ -50413,6 +50449,27 @@
                 "name": "String",
                 "ofType": null
               }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsWorkConnectionGalleryQueryList_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsWorkConnectionGalleryInputObject_2",
+              "ofType": null
             },
             "defaultValue": null
           }
@@ -56446,6 +56503,12 @@
             "deprecationReason": null
           },
           {
+            "name": "globalSeo___fallbackSeo___twitterCard",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "globalSeo___fallbackSeo___image",
             "description": null,
             "isDeprecated": false,
@@ -59258,6 +59321,16 @@
             "defaultValue": null
           },
           {
+            "name": "twitterCard",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsSiteConnectionGlobalSeoFallbackSeoTwitterCardQueryString_2",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "image",
             "description": null,
             "type": {
@@ -59354,6 +59427,85 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "datoCmsSiteConnectionGlobalSeoFallbackSeoDescriptionQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsSiteConnectionGlobalSeoFallbackSeoTwitterCardQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -62355,6 +62507,18 @@
             "deprecationReason": null
           },
           {
+            "name": "twitterCard",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "image",
             "description": null,
             "args": [],
@@ -62661,6 +62825,12 @@
             "deprecationReason": null
           },
           {
+            "name": "globalSeo___fallbackSeo___twitterCard",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "globalSeo___fallbackSeo___image",
             "description": null,
             "isDeprecated": false,
@@ -62877,6 +63047,12 @@
           },
           {
             "name": "globalSeo___fallbackSeo___description",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "globalSeo___fallbackSeo___twitterCard",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -63148,18 +63324,6 @@
             "deprecationReason": null
           },
           {
-            "name": "frontmatter____PARENT",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "excerpt",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "rawMarkdownBody",
             "description": null,
             "isDeprecated": false,
@@ -63167,6 +63331,12 @@
           },
           {
             "name": "html",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "excerpt",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -63270,16 +63440,6 @@
             "defaultValue": null
           },
           {
-            "name": "excerpt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "excerptQueryString_4",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
             "name": "rawMarkdownBody",
             "description": null,
             "type": {
@@ -63295,6 +63455,16 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "htmlQueryString_4",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "excerpt",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "excerptQueryString_4",
               "ofType": null
             },
             "defaultValue": null
@@ -63805,16 +63975,6 @@
               "ofType": null
             },
             "defaultValue": null
-          },
-          {
-            "name": "_PARENT",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "markdownRemarkConnectionFrontmatterParentQueryString_2",
-              "ofType": null
-            },
-            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -63824,164 +63984,6 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "markdownRemarkConnectionFrontmatterTitleQueryString_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "markdownRemarkConnectionFrontmatterParentQueryString_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "excerptQueryString_4",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -64140,6 +64142,85 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "htmlQueryString_4",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "excerptQueryString_4",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -65189,18 +65270,6 @@
             "deprecationReason": null
           },
           {
-            "name": "frontmatter____PARENT",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "excerpt",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "rawMarkdownBody",
             "description": null,
             "isDeprecated": false,
@@ -65255,18 +65324,6 @@
           },
           {
             "name": "frontmatter___title",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "frontmatter____PARENT",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "excerpt",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -65993,16 +66050,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "sitePagePluginCreatorPackageJsonInputObject",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "parent",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "sitePagePluginCreatorParentQueryString",
               "ofType": null
             },
             "defaultValue": null
@@ -68051,85 +68098,6 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "sitePagePluginCreatorPackageJsonKeywordsQueryList",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "sitePagePluginCreatorParentQueryString",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -75218,6 +75186,27 @@
                 "name": "Boolean",
                 "ofType": null
               }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsModelFieldsQueryList_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsModelFieldsInputObject_2",
+              "ofType": null
             },
             "defaultValue": null
           }
@@ -85999,6 +85988,16 @@
               "ofType": null
             },
             "defaultValue": null
+          },
+          {
+            "name": "twitterCard",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsHomeSeoSettingsTwitterCardQueryString_2",
+              "ofType": null
+            },
+            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -86087,6 +86086,85 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "datoCmsHomeSeoSettingsDescriptionQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomeSeoSettingsTwitterCardQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -98855,6 +98933,27 @@
       },
       {
         "kind": "INPUT_OBJECT",
+        "name": "datoCmsWorkGalleryQueryList_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsWorkGalleryInputObject_2",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
         "name": "datoCmsWorkGalleryInputObject_2",
         "description": null,
         "fields": null,
@@ -105561,6 +105660,16 @@
             "defaultValue": null
           },
           {
+            "name": "twitterCard",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsSiteGlobalSeoFallbackSeoTwitterCardQueryString_2",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "image",
             "description": null,
             "type": {
@@ -105657,6 +105766,85 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "datoCmsSiteGlobalSeoFallbackSeoDescriptionQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsSiteGlobalSeoFallbackSeoTwitterCardQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -108309,16 +108497,6 @@
               "ofType": null
             },
             "defaultValue": null
-          },
-          {
-            "name": "_PARENT",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "markdownRemarkFrontmatterParentQueryString_2",
-              "ofType": null
-            },
-            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -108328,164 +108506,6 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "markdownRemarkFrontmatterTitleQueryString_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "markdownRemarkFrontmatterParentQueryString_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "excerptQueryString_3",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -108644,6 +108664,85 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "htmlQueryString_3",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "excerptQueryString_3",
         "description": null,
         "fields": null,
         "inputFields": [

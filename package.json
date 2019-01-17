@@ -14,7 +14,9 @@
     "format": "prettier --write -l --no-color './{src,types}/**/*.{js,ts,tsx}'",
     "lint": "tslint -p tsconfig.json",
     "typecheck": "tsc --noEmit",
-    "codegen": "gql-gen --config codegen.yml"
+    "codegen:schema": "apollo schema:download --endpoint 'http://localhost:8000/___graphql' src/generated/schema.json",
+    "codegen:generate": "apollo codegen:generate --outputFlat --target='typescript' --tagName='graphql' --queries='./src/**/*.{ts,tsx}' --schema='./src/generated/schema.json' './src/generated/graphql.ts'",
+    "codegen": "yarn codegen:schema && yarn codegen:generate"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -38,9 +40,7 @@
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
     "@types/styled-components": "^4.1.6",
-    "graphql-code-generator": "^0.15.2",
-    "graphql-codegen-typescript-client": "0.15.2",
-    "graphql-codegen-typescript-common": "0.15.2",
+    "apollo": "1.9.2",
     "husky": "^1.3.1",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.9.0",
