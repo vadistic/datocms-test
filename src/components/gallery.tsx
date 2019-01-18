@@ -16,7 +16,7 @@ type CustomPhotoProps = Idx<GatsbyDatoCmsFluidFragment>
 
 const PhotoGallery = _PhotoGallery as GalleryI<CustomPhotoProps>
 
-const Image: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
+const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
   photo,
   margin,
   onClick,
@@ -26,8 +26,6 @@ const Image: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
   left,
 }) => {
   const handleClick: React.MouseEventHandler = event => {
-    console.log('ImageProps')
-    console.log('margin: ', margin)
     if (onClick) {
       onClick(event, { index })
     }
@@ -56,6 +54,36 @@ const Image: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
   )
 }
 
+const fixAspectRatio = (aspectRatio: number) => {
+  // calculate images length as fraction of width in 0.25 increments
+  // co columns layout edges won't have misaligments
+  const ratioValues = [4, 2, 4 / 3, 1, 4 / 5, 2 / 3, 4 / 7, 1 / 2]
+
+  // very wide
+  if (aspectRatio > ratioValues[0]) {
+    return ratioValues[0]
+  }
+
+  // very high
+  if (aspectRatio < ratioValues[ratioValues.length - 1]) {
+    return ratioValues[ratioValues.length - 1]
+  }
+
+  let result = 0
+
+  ratioValues.forEach((val, i) => {
+    const current = val
+    const next = ratioValues[i + 1]
+
+    if (aspectRatio <= current && aspectRatio > next) {
+      // calculate distance
+      result = current - aspectRatio <= aspectRatio - next ? current : next
+    }
+  })
+
+  return result
+}
+
 interface GalleryProps {
   items: Idx<IndexPageQuery>['allDatoCmsWork']['edges']
 }
@@ -75,11 +103,15 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
     return col
   }
 
-  const photos = items.map(({ node }) => ({
-    ...node.coverImage.fluid,
-    height: 1,
-    width: node.coverImage.fluid.aspectRatio,
-  }))
+  const photos = items.map(({ node }) => {
+    const aspectRatio = fixAspectRatio(node.coverImage.fluid.aspectRatio)
+    return {
+      ...node.coverImage.fluid,
+      aspectRatio,
+      height: 1,
+      width: aspectRatio,
+    }
+  })
 
   const onClick: PhotoClickHandler<CustomPhotoProps> = () => {
     // noop
@@ -87,9 +119,11 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
 
   return (
     <PhotoGallery
+      margin={4}
       photos={photos}
+      direction="column"
       columns={getColumns}
-      ImageComponent={Image}
+      ImageComponent={ImageComponent}
       onClick={onClick}
     />
   )
