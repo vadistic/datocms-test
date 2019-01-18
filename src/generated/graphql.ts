@@ -145,6 +145,22 @@ export interface AboutPageQuery {
 // GraphQL query operation: IndexPageQuery
 // ====================================================
 
+export interface IndexPageQuery_datoCmsHome_introTextNode_childMarkdownRemark {
+  html: string | null;
+}
+
+export interface IndexPageQuery_datoCmsHome_introTextNode {
+  /**
+   * The child of this node of type markdownRemark
+   */
+  childMarkdownRemark: IndexPageQuery_datoCmsHome_introTextNode_childMarkdownRemark | null;
+}
+
+export interface IndexPageQuery_datoCmsHome {
+  introTextNode: IndexPageQuery_datoCmsHome_introTextNode | null;
+  copyright: string | null;
+}
+
 export interface IndexPageQuery_allDatoCmsWork_edges_node_coverImage_fluid {
   base64: string | null;
   aspectRatio: number | null;
@@ -183,6 +199,7 @@ export interface IndexPageQuery_allDatoCmsWork {
 }
 
 export interface IndexPageQuery {
+  datoCmsHome: IndexPageQuery_datoCmsHome | null;
   /**
    * Connection to all DatoCmsWork nodes
    */

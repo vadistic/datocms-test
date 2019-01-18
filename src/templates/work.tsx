@@ -7,7 +7,7 @@ import { Layout } from '../components'
 import { WorkQuery } from '../generated/graphql'
 import { IdxData } from '../utils'
 
-export const Work: React.FC<IdxData<WorkQuery>> = ({ data }) => (
+const WorkTemplate: React.FC<IdxData<WorkQuery>> = ({ data }) => (
   <Layout>
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
@@ -23,7 +23,7 @@ export const Work: React.FC<IdxData<WorkQuery>> = ({ data }) => (
   </Layout>
 )
 
-export const WORK_QUERY = graphql`
+export const WORK_TEMPLATE_QUERY = graphql`
   query WorkQuery($slug: String!) {
     datoCmsWork(slug: { eq: $slug }) {
       seoMetaTags {
@@ -45,3 +45,5 @@ export const WORK_QUERY = graphql`
     }
   }
 `
+
+export default WorkTemplate
