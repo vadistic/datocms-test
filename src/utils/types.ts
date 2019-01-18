@@ -14,3 +14,7 @@ export type Idx<T> = T extends any[]
   : T extends object
   ? NonNullableObjOrLit<T>
   : NonNullable<T>
+
+export interface IdxData<T extends object> {
+  data: Idx<T>
+}

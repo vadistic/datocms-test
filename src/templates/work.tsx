@@ -4,18 +4,19 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import React from 'react'
 
 import { Layout } from '../components'
+import { WorkQuery } from '../generated/graphql'
+import { IdxData } from '../utils'
 
-export const Work: React.FC = ({ data }: any) => (
+export const Work: React.FC<IdxData<WorkQuery>> = ({ data }) => (
   <Layout>
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
       <div
-        className="sheet__body"
         dangerouslySetInnerHTML={{
           __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html,
         }}
       />
-      <div className="sheet__gallery">
+      <div>
         <Img fluid={data.datoCmsWork.coverImage.fluid} />
       </div>
     </article>
@@ -26,7 +27,7 @@ export const WORK_QUERY = graphql`
   query WorkQuery($slug: String!) {
     datoCmsWork(slug: { eq: $slug }) {
       seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+        ...GatsbyDatoCmsSeoMetaTagsFragment
       }
       title
       excerpt
@@ -38,7 +39,7 @@ export const WORK_QUERY = graphql`
       coverImage {
         url
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluidFragment
         }
       }
     }

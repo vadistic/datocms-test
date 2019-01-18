@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     // gatsby types override
-    "paths": { "gatsby": ["types/gatsby.d.ts"] },
-    "typeRoots": ["node_modules/@types", "types"],
+    "paths": { "gatsby": ["types/gatsby.d.ts", "node_modules/gatsby"] },
     "allowJs": false,
     "target": "es6",
     "module": "commonjs",

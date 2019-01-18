@@ -48,21 +48,8 @@ export interface LayoutQuery_datoCmsHome_seoMetaTags {
   tags: (LayoutQuery_datoCmsHome_seoMetaTags_tags | null)[] | null;
 }
 
-export interface LayoutQuery_datoCmsHome_introTextNode_childMarkdownRemark {
-  html: string | null;
-}
-
-export interface LayoutQuery_datoCmsHome_introTextNode {
-  /**
-   * The child of this node of type markdownRemark
-   */
-  childMarkdownRemark: LayoutQuery_datoCmsHome_introTextNode_childMarkdownRemark | null;
-}
-
 export interface LayoutQuery_datoCmsHome {
   seoMetaTags: LayoutQuery_datoCmsHome_seoMetaTags | null;
-  introTextNode: LayoutQuery_datoCmsHome_introTextNode | null;
-  copyright: string | null;
 }
 
 export interface LayoutQuery_allDatoCmsSocialProfile_edges_node {
@@ -97,26 +84,26 @@ export interface LayoutQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: AboutQuery
+// GraphQL query operation: AboutPageQuery
 // ====================================================
 
-export interface AboutQuery_about_seoMetaTags_tags_attributes {
+export interface AboutPageQuery_about_seoMetaTags_tags_attributes {
   property: string | null;
   content: string | null;
   name: string | null;
 }
 
-export interface AboutQuery_about_seoMetaTags_tags {
+export interface AboutPageQuery_about_seoMetaTags_tags {
   tagName: string | null;
   content: string | null;
-  attributes: AboutQuery_about_seoMetaTags_tags_attributes | null;
+  attributes: AboutPageQuery_about_seoMetaTags_tags_attributes | null;
 }
 
-export interface AboutQuery_about_seoMetaTags {
-  tags: (AboutQuery_about_seoMetaTags_tags | null)[] | null;
+export interface AboutPageQuery_about_seoMetaTags {
+  tags: (AboutPageQuery_about_seoMetaTags_tags | null)[] | null;
 }
 
-export interface AboutQuery_about_photo_fluid {
+export interface AboutPageQuery_about_photo_fluid {
   base64: string | null;
   aspectRatio: number | null;
   src: string | null;
@@ -124,41 +111,41 @@ export interface AboutQuery_about_photo_fluid {
   sizes: string | null;
 }
 
-export interface AboutQuery_about_photo {
-  fluid: AboutQuery_about_photo_fluid | null;
+export interface AboutPageQuery_about_photo {
+  fluid: AboutPageQuery_about_photo_fluid | null;
 }
 
-export interface AboutQuery_about_bioNode_childMarkdownRemark {
+export interface AboutPageQuery_about_bioNode_childMarkdownRemark {
   html: string | null;
 }
 
-export interface AboutQuery_about_bioNode {
+export interface AboutPageQuery_about_bioNode {
   /**
    * The child of this node of type markdownRemark
    */
-  childMarkdownRemark: AboutQuery_about_bioNode_childMarkdownRemark | null;
+  childMarkdownRemark: AboutPageQuery_about_bioNode_childMarkdownRemark | null;
 }
 
-export interface AboutQuery_about {
-  seoMetaTags: AboutQuery_about_seoMetaTags | null;
+export interface AboutPageQuery_about {
+  seoMetaTags: AboutPageQuery_about_seoMetaTags | null;
   title: string | null;
   subtitle: string | null;
-  photo: AboutQuery_about_photo | null;
-  bioNode: AboutQuery_about_bioNode | null;
+  photo: AboutPageQuery_about_photo | null;
+  bioNode: AboutPageQuery_about_bioNode | null;
 }
 
-export interface AboutQuery {
-  about: AboutQuery_about | null;
+export interface AboutPageQuery {
+  about: AboutPageQuery_about | null;
 }
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: IndexQuery
+// GraphQL query operation: IndexPageQuery
 // ====================================================
 
-export interface IndexQuery_allDatoCmsWork_edges_node_coverImage_fluid {
+export interface IndexPageQuery_allDatoCmsWork_edges_node_coverImage_fluid {
   base64: string | null;
   aspectRatio: number | null;
   src: string | null;
@@ -166,11 +153,11 @@ export interface IndexQuery_allDatoCmsWork_edges_node_coverImage_fluid {
   sizes: string | null;
 }
 
-export interface IndexQuery_allDatoCmsWork_edges_node_coverImage {
-  fluid: IndexQuery_allDatoCmsWork_edges_node_coverImage_fluid | null;
+export interface IndexPageQuery_allDatoCmsWork_edges_node_coverImage {
+  fluid: IndexPageQuery_allDatoCmsWork_edges_node_coverImage_fluid | null;
 }
 
-export interface IndexQuery_allDatoCmsWork_edges_node {
+export interface IndexPageQuery_allDatoCmsWork_edges_node {
   /**
    * The id of this node.
    */
@@ -178,28 +165,28 @@ export interface IndexQuery_allDatoCmsWork_edges_node {
   title: string | null;
   slug: string | null;
   excerpt: string | null;
-  coverImage: IndexQuery_allDatoCmsWork_edges_node_coverImage | null;
+  coverImage: IndexPageQuery_allDatoCmsWork_edges_node_coverImage | null;
 }
 
-export interface IndexQuery_allDatoCmsWork_edges {
+export interface IndexPageQuery_allDatoCmsWork_edges {
   /**
    * The item at the end of the edge
    */
-  node: IndexQuery_allDatoCmsWork_edges_node | null;
+  node: IndexPageQuery_allDatoCmsWork_edges_node | null;
 }
 
-export interface IndexQuery_allDatoCmsWork {
+export interface IndexPageQuery_allDatoCmsWork {
   /**
    * A list of edges.
    */
-  edges: (IndexQuery_allDatoCmsWork_edges | null)[] | null;
+  edges: (IndexPageQuery_allDatoCmsWork_edges | null)[] | null;
 }
 
-export interface IndexQuery {
+export interface IndexPageQuery {
   /**
    * Connection to all DatoCmsWork nodes
    */
-  allDatoCmsWork: IndexQuery_allDatoCmsWork | null;
+  allDatoCmsWork: IndexPageQuery_allDatoCmsWork | null;
 }
 
 /* tslint:disable */
@@ -269,33 +256,33 @@ export interface WorkQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: GatsbyDatoCmsSeoMetaTags
+// GraphQL fragment: GatsbyDatoCmsSeoMetaTagsFragment
 // ====================================================
 
-export interface GatsbyDatoCmsSeoMetaTags_tags_attributes {
+export interface GatsbyDatoCmsSeoMetaTagsFragment_tags_attributes {
   property: string | null;
   content: string | null;
   name: string | null;
 }
 
-export interface GatsbyDatoCmsSeoMetaTags_tags {
+export interface GatsbyDatoCmsSeoMetaTagsFragment_tags {
   tagName: string | null;
   content: string | null;
-  attributes: GatsbyDatoCmsSeoMetaTags_tags_attributes | null;
+  attributes: GatsbyDatoCmsSeoMetaTagsFragment_tags_attributes | null;
 }
 
-export interface GatsbyDatoCmsSeoMetaTags {
-  tags: (GatsbyDatoCmsSeoMetaTags_tags | null)[] | null;
+export interface GatsbyDatoCmsSeoMetaTagsFragment {
+  tags: (GatsbyDatoCmsSeoMetaTagsFragment_tags | null)[] | null;
 }
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: GatsbyDatoCmsFaviconMetaTags
+// GraphQL fragment: GatsbyDatoCmsFaviconMetaTagsFragment
 // ====================================================
 
-export interface GatsbyDatoCmsFaviconMetaTags_tags_attributes {
+export interface GatsbyDatoCmsFaviconMetaTagsFragment_tags_attributes {
   rel: string | null;
   sizes: string | null;
   href: string | null;
@@ -304,23 +291,23 @@ export interface GatsbyDatoCmsFaviconMetaTags_tags_attributes {
   type: string | null;
 }
 
-export interface GatsbyDatoCmsFaviconMetaTags_tags {
+export interface GatsbyDatoCmsFaviconMetaTagsFragment_tags {
   tagName: string | null;
-  attributes: GatsbyDatoCmsFaviconMetaTags_tags_attributes | null;
+  attributes: GatsbyDatoCmsFaviconMetaTagsFragment_tags_attributes | null;
 }
 
-export interface GatsbyDatoCmsFaviconMetaTags {
-  tags: (GatsbyDatoCmsFaviconMetaTags_tags | null)[] | null;
+export interface GatsbyDatoCmsFaviconMetaTagsFragment {
+  tags: (GatsbyDatoCmsFaviconMetaTagsFragment_tags | null)[] | null;
 }
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: GatsbyDatoCmsResolutions
+// GraphQL fragment: GatsbyDatoCmsResolutionsFragment
 // ====================================================
 
-export interface GatsbyDatoCmsResolutions {
+export interface GatsbyDatoCmsResolutionsFragment {
   base64: string | null;
   width: number | null;
   height: number | null;
@@ -332,10 +319,10 @@ export interface GatsbyDatoCmsResolutions {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: GatsbyDatoCmsResolutions_noBase64
+// GraphQL fragment: GatsbyDatoCmsResolutionsFragment_noBase64
 // ====================================================
 
-export interface GatsbyDatoCmsResolutions_noBase64 {
+export interface GatsbyDatoCmsResolutionsFragment_noBase64 {
   width: number | null;
   height: number | null;
   src: string | null;
@@ -346,68 +333,10 @@ export interface GatsbyDatoCmsResolutions_noBase64 {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: GatsbyDatoCmsSizes
+// GraphQL fragment: GatsbyDatoCmsSizesFragment
 // ====================================================
 
-export interface GatsbyDatoCmsSizes {
-  base64: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  sizes: string | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL fragment: GatsbyDatoCmsSizes_noBase64
-// ====================================================
-
-export interface GatsbyDatoCmsSizes_noBase64 {
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  sizes: string | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL fragment: GatsbyDatoCmsFixed
-// ====================================================
-
-export interface GatsbyDatoCmsFixed {
-  base64: string | null;
-  width: number | null;
-  height: number | null;
-  src: string | null;
-  srcSet: string | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL fragment: GatsbyDatoCmsFixed_noBase64
-// ====================================================
-
-export interface GatsbyDatoCmsFixed_noBase64 {
-  width: number | null;
-  height: number | null;
-  src: string | null;
-  srcSet: string | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL fragment: GatsbyDatoCmsFluid
-// ====================================================
-
-export interface GatsbyDatoCmsFluid {
+export interface GatsbyDatoCmsSizesFragment {
   base64: string | null;
   aspectRatio: number | null;
   src: string | null;
@@ -419,10 +348,68 @@ export interface GatsbyDatoCmsFluid {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: GatsbyDatoCmsFluid_noBase64
+// GraphQL fragment: GatsbyDatoCmsSizesFragment_noBase64
 // ====================================================
 
-export interface GatsbyDatoCmsFluid_noBase64 {
+export interface GatsbyDatoCmsSizesFragment_noBase64 {
+  aspectRatio: number | null;
+  src: string | null;
+  srcSet: string | null;
+  sizes: string | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: GatsbyDatoCmsFixedFragment
+// ====================================================
+
+export interface GatsbyDatoCmsFixedFragment {
+  base64: string | null;
+  width: number | null;
+  height: number | null;
+  src: string | null;
+  srcSet: string | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: GatsbyDatoCmsFixedFragment_noBase64
+// ====================================================
+
+export interface GatsbyDatoCmsFixedFragment_noBase64 {
+  width: number | null;
+  height: number | null;
+  src: string | null;
+  srcSet: string | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: GatsbyDatoCmsFluidFragment
+// ====================================================
+
+export interface GatsbyDatoCmsFluidFragment {
+  base64: string | null;
+  aspectRatio: number | null;
+  src: string | null;
+  srcSet: string | null;
+  sizes: string | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: GatsbyDatoCmsFluidFragment_noBase64
+// ====================================================
+
+export interface GatsbyDatoCmsFluidFragment_noBase64 {
   aspectRatio: number | null;
   src: string | null;
   srcSet: string | null;

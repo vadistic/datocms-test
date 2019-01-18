@@ -3,36 +3,39 @@ import Img from 'gatsby-image'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import React from 'react'
 
-export const About: React.FC = ({ data: { about } }: any) => (
-  <article className="sheet">
-    <HelmetDatoCms seo={about.seoMetaTags} />
-    <div className="sheet__inner">
-      <h1 className="sheet__title">{about.title}</h1>
-      <p className="sheet__lead">{about.subtitle}</p>
-      <div className="sheet__gallery">
-        <Img fluid={about.photo.fluid} />
-      </div>
+import { Layout } from '../components'
+import { AboutPageQuery } from '../generated/graphql'
+import { IdxData } from '../utils'
+
+const AboutPage: React.FC<IdxData<AboutPageQuery>> = ({ data }) => (
+  <Layout>
+    <HelmetDatoCms seo={data.about.seoMetaTags} />
+    <article>
+      <p>About Page</p>
+      <h1>{data.about.title}</h1>
+      <Img fluid={data.about.photo.fluid} />
+
+      <p>{data.about.subtitle}</p>
       <div
-        className="sheet__body"
         dangerouslySetInnerHTML={{
-          __html: about.bioNode.childMarkdownRemark.html,
+          __html: data.about.bioNode.childMarkdownRemark.html,
         }}
       />
-    </div>
-  </article>
+    </article>
+  </Layout>
 )
 
-export const ABOUT_QUERY = graphql`
-  query AboutQuery {
+export const ABOUT_PAGE_QUERY = graphql`
+  query AboutPageQuery {
     about: datoCmsAboutPage {
       seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+        ...GatsbyDatoCmsSeoMetaTagsFragment
       }
       title
       subtitle
       photo {
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+          ...GatsbyDatoCmsSizesFragment
         }
       }
       bioNode {
@@ -43,3 +46,5 @@ export const ABOUT_QUERY = graphql`
     }
   }
 `
+
+export default AboutPage

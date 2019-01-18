@@ -1,6 +1,25 @@
-import { graphql, Link, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
-import React from 'react'
+import { Grommet } from 'grommet'
+import React, { Fragment } from 'react'
+
+import { LayoutQuery } from '../generated/graphql'
+import { theme } from '../styles/theme'
+import { Idx } from '../utils'
+
+export const Layout: React.FC = ({ children }) => (
+  <StaticQuery<Idx<LayoutQuery>> query={LAYOUT_QUERY}>
+    {data => (
+      <Fragment>
+        <HelmetDatoCms
+          favicon={data.datoCmsSite.faviconMetaTags}
+          seo={data.datoCmsHome.seoMetaTags}
+        />
+        <Grommet theme={theme}>{children}</Grommet>
+      </Fragment>
+    )}
+  </StaticQuery>
+)
 
 export const LAYOUT_QUERY = graphql`
   query LayoutQuery {
@@ -9,19 +28,13 @@ export const LAYOUT_QUERY = graphql`
         siteName
       }
       faviconMetaTags {
-        ...GatsbyDatoCmsFaviconMetaTags
+        ...GatsbyDatoCmsFaviconMetaTagsFragment
       }
     }
     datoCmsHome {
       seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+        ...GatsbyDatoCmsSeoMetaTagsFragment
       }
-      introTextNode {
-        childMarkdownRemark {
-          html
-        }
-      }
-      copyright
     }
     allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
       edges {
@@ -33,66 +46,3 @@ export const LAYOUT_QUERY = graphql`
     }
   }
 `
-export const Layout: React.FC = ({ children }) => (
-  <StaticQuery query={LAYOUT_QUERY}>
-    {(data: any) => (
-      <div className="container">
-        <HelmetDatoCms
-          favicon={data.datoCmsSite.faviconMetaTags}
-          seo={data.datoCmsHome.seoMetaTags}
-        />
-        <div className="container__sidebar">
-          <div className="sidebar">
-            <h6 className="sidebar__title">
-              <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-            </h6>
-            <div
-              className="sidebar__intro"
-              dangerouslySetInnerHTML={{
-                __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
-              }}
-            />
-            <ul className="sidebar__menu">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-            </ul>
-            <p className="sidebar__social">
-              {data.allDatoCmsSocialProfile.edges.map(
-                ({ node: profile }: any) => (
-                  <a
-                    key={profile.profileType}
-                    href={profile.url}
-                    target="blank"
-                    className={`social social--${profile.profileType.toLowerCase()}`}
-                  >
-                    {' '}
-                  </a>
-                )
-              )}
-            </p>
-            <div className="sidebar__copyright">
-              {data.datoCmsHome.copyright}
-            </div>
-          </div>
-        </div>
-        <div className="container__body">
-          <div className="container__mobile-header">
-            <div className="mobile-header">
-              <div className="mobile-header__menu">
-                <Link to="#" data-js="toggleSidebar" />
-              </div>
-              <div className="mobile-header__logo">
-                <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-              </div>
-            </div>
-          </div>
-          {children}
-        </div>
-      </div>
-    )}
-  </StaticQuery>
-)
