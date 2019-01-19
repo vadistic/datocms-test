@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
-    // gatsby types override
-    "paths": { "gatsby": ["types/gatsby.d.ts", "node_modules/gatsby"] },
+    // types override
+    "paths": {
+      "gatsby": ["types/gatsby", "node_modules/gatsby"],
+      "grommet": ["types/grommet", "node_modules/grommet"]
+    },
     "allowJs": false,
     "target": "es6",
     "module": "commonjs",

@@ -1,10 +1,27 @@
-import { Grommet } from 'grommet'
-import React, { Fragment } from 'react'
+import { Box, Grommet } from 'grommet'
+import React, { Fragment, useState } from 'react'
 
+import { createGlobalStyle } from '../styles/styled-components'
 import { theme } from '../styles/theme'
+import { Navigation, NavigationOpenButton } from './navigation'
 
-export const Layout: React.FC = ({ children }) => (
-  <Fragment>
-    <Grommet theme={theme}>{children}</Grommet>
-  </Fragment>
-)
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+`
+
+export const Layout: React.FC = ({ children }) => {
+  const [isPanelOpen, setPanel] = useState(false)
+  const closePanel = () => setPanel(false)
+  return (
+    <Fragment>
+      <Grommet theme={theme}>
+        <GlobalStyle />
+        <NavigationOpenButton onClick={() => setPanel(true)} />
+        <Navigation isPanelOpen={isPanelOpen} setPanel={setPanel} />
+        <Box as="article" width="full" onClick={closePanel}>
+          {children}
+        </Box>
+      </Grommet>
+    </Fragment>
+  )
+}

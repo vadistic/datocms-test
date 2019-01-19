@@ -224,8 +224,8 @@
             "deprecationReason": null
           },
           {
-            "name": "allDatoCmsHomeIntroTextTextNode",
-            "description": "Connection to all DatoCmsHomeIntroTextTextNode nodes",
+            "name": "allDatoCmsHomePageIntroTextTextNode",
+            "description": "Connection to all DatoCmsHomePageIntroTextTextNode nodes",
             "args": [
               {
                 "name": "skip",
@@ -252,7 +252,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeIntroTextTextNodeConnectionSort",
+                  "name": "datoCmsHomePageIntroTextTextNodeConnectionSort",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -262,7 +262,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "filterDatoCmsHomeIntroTextTextNode",
+                  "name": "filterDatoCmsHomePageIntroTextTextNode",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -270,7 +270,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNodeConnection",
+              "name": "DatoCmsHomePageIntroTextTextNodeConnection",
               "ofType": null
             },
             "isDeprecated": false,
@@ -542,8 +542,8 @@
             "deprecationReason": null
           },
           {
-            "name": "allDatoCmsHome",
-            "description": "Connection to all DatoCmsHome nodes",
+            "name": "allDatoCmsHomePage",
+            "description": "Connection to all DatoCmsHomePage nodes",
             "args": [
               {
                 "name": "skip",
@@ -570,7 +570,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeConnectionSort",
+                  "name": "datoCmsHomePageConnectionSort",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -580,7 +580,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "filterDatoCmsHome",
+                  "name": "filterDatoCmsHomePage",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -588,7 +588,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeConnection",
+              "name": "DatoCmsHomePageConnection",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1344,6 +1344,16 @@
                   "ofType": null
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "defaultValue",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "datoCmsFieldDefaultValueQueryString_2",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -1508,7 +1518,7 @@
             "deprecationReason": null
           },
           {
-            "name": "datoCmsHomeIntroTextTextNode",
+            "name": "datoCmsHomePageIntroTextTextNode",
             "description": null,
             "args": [
               {
@@ -1516,7 +1526,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeIntroTextTextNodeIdQueryString_2",
+                  "name": "datoCmsHomePageIntroTextTextNodeIdQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1526,7 +1536,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeIntroTextTextNodeIntroTextQueryString_2",
+                  "name": "datoCmsHomePageIntroTextTextNodeIntroTextQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1536,7 +1546,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeIntroTextTextNodeInternalInputObject_2",
+                  "name": "datoCmsHomePageIntroTextTextNodeInternalInputObject_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1544,7 +1554,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1856,7 +1866,7 @@
             "deprecationReason": null
           },
           {
-            "name": "datoCmsHome",
+            "name": "datoCmsHomePage",
             "description": null,
             "args": [
               {
@@ -1864,7 +1874,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeIdQueryString_2",
+                  "name": "datoCmsHomePageIdQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1874,7 +1884,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeOriginalIdQueryString_2",
+                  "name": "datoCmsHomePageOriginalIdQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1884,7 +1894,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeInternalInputObject_2",
+                  "name": "datoCmsHomePageInternalInputObject_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1894,7 +1904,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeLocaleQueryString_2",
+                  "name": "datoCmsHomePageLocaleQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1904,7 +1914,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeModelInputObject_2",
+                  "name": "datoCmsHomePageModelInputObject_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1914,7 +1924,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeIntroTextNodeInputObject_2",
+                  "name": "datoCmsHomePageIntroTextNodeInputObject_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1924,7 +1934,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeIntroTextQueryString_2",
+                  "name": "datoCmsHomePageIntroTextQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1934,7 +1944,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeCopyrightQueryString_2",
+                  "name": "datoCmsHomePageCopyrightQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1944,7 +1954,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeSeoSettingsInputObject_2",
+                  "name": "datoCmsHomePageSeoSettingsInputObject_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1954,7 +1964,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeSeoMetaTagsInputObject_2",
+                  "name": "datoCmsHomePageSeoMetaTagsInputObject_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1964,7 +1974,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "datoCmsHomeUpdatedAtQueryString_2",
+                  "name": "datoCmsHomePageUpdatedAtQueryString_2",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -1972,7 +1982,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHome",
+              "name": "DatoCmsHomePage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -7043,7 +7053,7 @@
           },
           {
             "kind": "OBJECT",
-            "name": "DatoCmsHomeIntroTextTextNode",
+            "name": "DatoCmsHomePageIntroTextTextNode",
             "ofType": null
           },
           {
@@ -7078,7 +7088,7 @@
           },
           {
             "kind": "OBJECT",
-            "name": "DatoCmsHome",
+            "name": "DatoCmsHomePage",
             "ofType": null
           },
           {
@@ -11497,6 +11507,12 @@
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "defaultValue",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "possibleTypes": null
@@ -11626,6 +11642,16 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "datoCmsFieldConnectionAppeareanceInputObject_2",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "defaultValue",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsFieldConnectionDefaultValueQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -13176,6 +13202,85 @@
         "possibleTypes": null
       },
       {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsFieldConnectionDefaultValueQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "OBJECT",
         "name": "DatoCmsFieldConnection",
         "description": "A connection to a list of items.",
@@ -13503,6 +13608,18 @@
             "type": {
               "kind": "OBJECT",
               "name": "appeareance_2",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "defaultValue",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -13882,6 +13999,12 @@
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "defaultValue",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "possibleTypes": null
@@ -13992,6 +14115,12 @@
           },
           {
             "name": "appeareance___type",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "defaultValue",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -15657,6 +15786,16 @@
               "ofType": null
             },
             "defaultValue": null
+          },
+          {
+            "name": "defaultValue",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsModelConnectionFieldsDefaultValueQueryString_2",
+              "ofType": null
+            },
+            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -17204,6 +17343,85 @@
         "possibleTypes": null
       },
       {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsModelConnectionFieldsDefaultValueQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "OBJECT",
         "name": "DatoCmsModelConnection",
         "description": "A connection to a list of items.",
@@ -17989,7 +18207,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionSort",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionSort",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18004,7 +18222,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "ENUM",
-                  "name": "DatoCmsHomeIntroTextTextNodeConnectionSortByFieldsEnum",
+                  "name": "DatoCmsHomePageIntroTextTextNodeConnectionSortByFieldsEnum",
                   "ofType": null
                 }
               }
@@ -18016,7 +18234,7 @@
             "description": null,
             "type": {
               "kind": "ENUM",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionSortOrderValues",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionSortOrderValues",
               "ofType": null
             },
             "defaultValue": "ASC"
@@ -18028,7 +18246,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "DatoCmsHomeIntroTextTextNodeConnectionSortByFieldsEnum",
+        "name": "DatoCmsHomePageIntroTextTextNodeConnectionSortByFieldsEnum",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -18093,7 +18311,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionSortOrderValues",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionSortOrderValues",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -18116,7 +18334,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "filterDatoCmsHomeIntroTextTextNode",
+        "name": "filterDatoCmsHomePageIntroTextTextNode",
         "description": "Filter connection on its fields",
         "fields": null,
         "inputFields": [
@@ -18125,7 +18343,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionIdQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18135,7 +18353,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionIntroTextQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionIntroTextQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18145,7 +18363,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionInternalInputObject_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18157,7 +18375,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionIdQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18236,7 +18454,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionIntroTextQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionIntroTextQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18315,7 +18533,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionInternalInputObject_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18324,7 +18542,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionInternalTypeQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18334,7 +18552,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionInternalMediaTypeQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalMediaTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18344,7 +18562,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionInternalContentQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18354,7 +18572,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18364,7 +18582,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeConnectionInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -18376,7 +18594,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionInternalTypeQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18455,7 +18673,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionInternalMediaTypeQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalMediaTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18534,7 +18752,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionInternalContentQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18613,7 +18831,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18692,7 +18910,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeConnectionInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeConnectionInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -18771,7 +18989,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "DatoCmsHomeIntroTextTextNodeConnection",
+        "name": "DatoCmsHomePageIntroTextTextNodeConnection",
         "description": "A connection to a list of items.",
         "fields": [
           {
@@ -18799,7 +19017,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "DatoCmsHomeIntroTextTextNodeEdge",
+                "name": "DatoCmsHomePageIntroTextTextNodeEdge",
                 "ofType": null
               }
             },
@@ -18827,7 +19045,7 @@
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "datoCmsHomeIntroTextTextNodeDistinctEnum",
+                  "name": "datoCmsHomePageIntroTextTextNodeDistinctEnum",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -18874,7 +19092,7 @@
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "datoCmsHomeIntroTextTextNodeGroupEnum",
+                  "name": "datoCmsHomePageIntroTextTextNodeGroupEnum",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -18885,7 +19103,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "datoCmsHomeIntroTextTextNodeGroupConnectionConnection",
+                "name": "datoCmsHomePageIntroTextTextNodeGroupConnectionConnection",
                 "ofType": null
               }
             },
@@ -18900,7 +19118,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "DatoCmsHomeIntroTextTextNodeEdge",
+        "name": "DatoCmsHomePageIntroTextTextNodeEdge",
         "description": "An edge in a connection.",
         "fields": [
           {
@@ -18909,7 +19127,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -18921,7 +19139,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -18933,7 +19151,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -18947,8 +19165,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "DatoCmsHomeIntroTextTextNode",
-        "description": "Node of type DatoCmsHomeIntroTextTextNode",
+        "name": "DatoCmsHomePageIntroTextTextNode",
+        "description": "Node of type DatoCmsHomePageIntroTextTextNode",
         "fields": [
           {
             "name": "id",
@@ -19597,7 +19815,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "datoCmsHomeIntroTextTextNodeDistinctEnum",
+        "name": "datoCmsHomePageIntroTextTextNodeDistinctEnum",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -19662,7 +19880,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "datoCmsHomeIntroTextTextNodeGroupEnum",
+        "name": "datoCmsHomePageIntroTextTextNodeGroupEnum",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -19727,7 +19945,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeGroupConnectionConnection",
+        "name": "datoCmsHomePageIntroTextTextNodeGroupConnectionConnection",
         "description": "A connection to a list of items.",
         "fields": [
           {
@@ -19755,7 +19973,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "datoCmsHomeIntroTextTextNodeGroupConnectionEdge",
+                "name": "datoCmsHomePageIntroTextTextNodeGroupConnectionEdge",
                 "ofType": null
               }
             },
@@ -19806,7 +20024,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeGroupConnectionEdge",
+        "name": "datoCmsHomePageIntroTextTextNodeGroupConnectionEdge",
         "description": "An edge in a connection.",
         "fields": [
           {
@@ -19815,7 +20033,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -19827,7 +20045,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -19839,7 +20057,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -31118,7 +31336,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSort",
+        "name": "datoCmsHomePageConnectionSort",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31133,7 +31351,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "ENUM",
-                  "name": "DatoCmsHomeConnectionSortByFieldsEnum",
+                  "name": "DatoCmsHomePageConnectionSortByFieldsEnum",
                   "ofType": null
                 }
               }
@@ -31145,7 +31363,7 @@
             "description": null,
             "type": {
               "kind": "ENUM",
-              "name": "datoCmsHomeConnectionSortOrderValues",
+              "name": "datoCmsHomePageConnectionSortOrderValues",
               "ofType": null
             },
             "defaultValue": "ASC"
@@ -31157,7 +31375,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "DatoCmsHomeConnectionSortByFieldsEnum",
+        "name": "DatoCmsHomePageConnectionSortByFieldsEnum",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -31264,7 +31482,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "datoCmsHomeConnectionSortOrderValues",
+        "name": "datoCmsHomePageConnectionSortOrderValues",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -31287,7 +31505,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "filterDatoCmsHome",
+        "name": "filterDatoCmsHomePage",
         "description": "Filter connection on its fields",
         "fields": null,
         "inputFields": [
@@ -31296,7 +31514,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIdQueryString_2",
+              "name": "datoCmsHomePageConnectionIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31306,7 +31524,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionOriginalIdQueryString_2",
+              "name": "datoCmsHomePageConnectionOriginalIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31316,7 +31534,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionInternalInputObject_2",
+              "name": "datoCmsHomePageConnectionInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31326,7 +31544,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionLocaleQueryString_2",
+              "name": "datoCmsHomePageConnectionLocaleQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31336,7 +31554,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelInputObject_2",
+              "name": "datoCmsHomePageConnectionModelInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31346,7 +31564,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeInputObject_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31356,7 +31574,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31366,7 +31584,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionCopyrightQueryString_2",
+              "name": "datoCmsHomePageConnectionCopyrightQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31376,7 +31594,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoSettingsInputObject_2",
+              "name": "datoCmsHomePageConnectionSeoSettingsInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31386,7 +31604,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsInputObject_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31396,7 +31614,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionUpdatedAtQueryString_2",
+              "name": "datoCmsHomePageConnectionUpdatedAtQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31408,7 +31626,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIdQueryString_2",
+        "name": "datoCmsHomePageConnectionIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31487,7 +31705,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionOriginalIdQueryString_2",
+        "name": "datoCmsHomePageConnectionOriginalIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31566,7 +31784,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionInternalInputObject_2",
+        "name": "datoCmsHomePageConnectionInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31575,7 +31793,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionInternalTypeQueryString_2",
+              "name": "datoCmsHomePageConnectionInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31585,7 +31803,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageConnectionInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31595,7 +31813,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageConnectionInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31607,7 +31825,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionInternalTypeQueryString_2",
+        "name": "datoCmsHomePageConnectionInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31686,7 +31904,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageConnectionInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31765,7 +31983,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageConnectionInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31844,7 +32062,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionLocaleQueryString_2",
+        "name": "datoCmsHomePageConnectionLocaleQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31923,7 +32141,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelInputObject_2",
+        "name": "datoCmsHomePageConnectionModelInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -31932,7 +32150,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelIdQueryString_2",
+              "name": "datoCmsHomePageConnectionModelIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31942,7 +32160,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelOriginalIdQueryString_2",
+              "name": "datoCmsHomePageConnectionModelOriginalIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31952,7 +32170,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelInternalInputObject_2",
+              "name": "datoCmsHomePageConnectionModelInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31962,7 +32180,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelNameQueryString_2",
+              "name": "datoCmsHomePageConnectionModelNameQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31972,7 +32190,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelSingletonQueryBoolean_2",
+              "name": "datoCmsHomePageConnectionModelSingletonQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31982,7 +32200,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelSortableQueryBoolean_2",
+              "name": "datoCmsHomePageConnectionModelSortableQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -31992,7 +32210,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelApiKeyQueryString_2",
+              "name": "datoCmsHomePageConnectionModelApiKeyQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32002,7 +32220,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelTreeQueryBoolean_2",
+              "name": "datoCmsHomePageConnectionModelTreeQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32012,7 +32230,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelModularBlockQueryBoolean_2",
+              "name": "datoCmsHomePageConnectionModelModularBlockQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32022,7 +32240,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelDraftModeActiveQueryBoolean_2",
+              "name": "datoCmsHomePageConnectionModelDraftModeActiveQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32032,7 +32250,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelAllLocalesRequiredQueryBoolean_2",
+              "name": "datoCmsHomePageConnectionModelAllLocalesRequiredQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32042,7 +32260,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelCollectionAppeareanceQueryString_2",
+              "name": "datoCmsHomePageConnectionModelCollectionAppeareanceQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32052,7 +32270,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelHasSingletonItemQueryBoolean_2",
+              "name": "datoCmsHomePageConnectionModelHasSingletonItemQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32064,7 +32282,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelIdQueryString_2",
+        "name": "datoCmsHomePageConnectionModelIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32143,7 +32361,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelOriginalIdQueryString_2",
+        "name": "datoCmsHomePageConnectionModelOriginalIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32222,7 +32440,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelInternalInputObject_2",
+        "name": "datoCmsHomePageConnectionModelInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32231,7 +32449,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelInternalTypeQueryString_2",
+              "name": "datoCmsHomePageConnectionModelInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32241,7 +32459,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageConnectionModelInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32251,7 +32469,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionModelInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageConnectionModelInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -32263,7 +32481,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelInternalTypeQueryString_2",
+        "name": "datoCmsHomePageConnectionModelInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32342,7 +32560,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageConnectionModelInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32421,7 +32639,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageConnectionModelInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32500,7 +32718,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelNameQueryString_2",
+        "name": "datoCmsHomePageConnectionModelNameQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32579,7 +32797,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelSingletonQueryBoolean_2",
+        "name": "datoCmsHomePageConnectionModelSingletonQueryBoolean_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32638,7 +32856,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelSortableQueryBoolean_2",
+        "name": "datoCmsHomePageConnectionModelSortableQueryBoolean_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -32697,322 +32915,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelApiKeyQueryString_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelTreeQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelModularBlockQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelDraftModeActiveQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelAllLocalesRequiredQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelCollectionAppeareanceQueryString_2",
+        "name": "datoCmsHomePageConnectionModelApiKeyQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33091,7 +32994,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionModelHasSingletonItemQueryBoolean_2",
+        "name": "datoCmsHomePageConnectionModelTreeQueryBoolean_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33150,7 +33053,322 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeInputObject_2",
+        "name": "datoCmsHomePageConnectionModelModularBlockQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageConnectionModelDraftModeActiveQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageConnectionModelAllLocalesRequiredQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageConnectionModelCollectionAppeareanceQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageConnectionModelHasSingletonItemQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageConnectionIntroTextNodeInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33159,7 +33377,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeIdQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33169,7 +33387,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeParentQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeParentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33179,7 +33397,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeChildrenQueryList_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeChildrenQueryList_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33189,7 +33407,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeIntroTextQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeIntroTextQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33199,7 +33417,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeInternalInputObject_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33211,7 +33429,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeIdQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33290,7 +33508,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeParentQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeParentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33369,7 +33587,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeChildrenQueryList_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeChildrenQueryList_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33448,7 +33666,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeIntroTextQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeIntroTextQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33527,7 +33745,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeInternalInputObject_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33536,7 +33754,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeInternalTypeQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33546,7 +33764,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeInternalMediaTypeQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeInternalMediaTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33556,7 +33774,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeInternalContentQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeInternalContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33566,7 +33784,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33576,7 +33794,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionIntroTextNodeInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageConnectionIntroTextNodeInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -33588,7 +33806,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeInternalTypeQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33667,7 +33885,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeInternalMediaTypeQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeInternalMediaTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33746,7 +33964,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeInternalContentQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeInternalContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33825,7 +34043,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33904,7 +34122,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextNodeInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextNodeInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -33983,7 +34201,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionIntroTextQueryString_2",
+        "name": "datoCmsHomePageConnectionIntroTextQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34062,7 +34280,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionCopyrightQueryString_2",
+        "name": "datoCmsHomePageConnectionCopyrightQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34141,7 +34359,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoSettingsInputObject_2",
+        "name": "datoCmsHomePageConnectionSeoSettingsInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34150,7 +34368,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoSettingsTitleQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoSettingsTitleQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34160,7 +34378,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoSettingsDescriptionQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoSettingsDescriptionQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34170,7 +34388,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoSettingsTwitterCardQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoSettingsTwitterCardQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34182,7 +34400,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoSettingsTitleQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoSettingsTitleQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34261,7 +34479,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoSettingsDescriptionQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoSettingsDescriptionQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34340,7 +34558,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoSettingsTwitterCardQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoSettingsTwitterCardQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34419,7 +34637,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsInputObject_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34428,7 +34646,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsIdQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34438,7 +34656,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsParentQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsParentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34448,7 +34666,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsQueryList_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsQueryList_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34458,7 +34676,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsInternalInputObject_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34470,7 +34688,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsIdQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34549,7 +34767,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsParentQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsParentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34628,7 +34846,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsQueryList_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsQueryList_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34637,7 +34855,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsInputObject_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34649,7 +34867,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsInputObject_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34658,7 +34876,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsTagNameQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsTagNameQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34668,7 +34886,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsContentQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34678,7 +34896,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesInputObject_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34690,7 +34908,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsTagNameQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsTagNameQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34769,7 +34987,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsContentQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34848,7 +35066,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesInputObject_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34857,7 +35075,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesPropertyQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesPropertyQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34867,7 +35085,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesContentQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34877,7 +35095,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesNameQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesNameQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -34889,7 +35107,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesPropertyQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesPropertyQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -34968,7 +35186,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesContentQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35047,7 +35265,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsTagsAttributesNameQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsTagsAttributesNameQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35126,7 +35344,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsInternalInputObject_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35135,7 +35353,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsInternalTypeQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -35145,7 +35363,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -35155,7 +35373,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeConnectionSeoMetaTagsInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageConnectionSeoMetaTagsInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -35167,7 +35385,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsInternalTypeQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35246,7 +35464,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35325,7 +35543,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionSeoMetaTagsInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageConnectionSeoMetaTagsInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35404,7 +35622,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeConnectionUpdatedAtQueryString_2",
+        "name": "datoCmsHomePageConnectionUpdatedAtQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -35483,7 +35701,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "DatoCmsHomeConnection",
+        "name": "DatoCmsHomePageConnection",
         "description": "A connection to a list of items.",
         "fields": [
           {
@@ -35511,7 +35729,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "DatoCmsHomeEdge",
+                "name": "DatoCmsHomePageEdge",
                 "ofType": null
               }
             },
@@ -35539,7 +35757,7 @@
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "datoCmsHomeDistinctEnum",
+                  "name": "datoCmsHomePageDistinctEnum",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -35586,7 +35804,7 @@
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "datoCmsHomeGroupEnum",
+                  "name": "datoCmsHomePageGroupEnum",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -35597,7 +35815,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "datoCmsHomeGroupConnectionConnection",
+                "name": "datoCmsHomePageGroupConnectionConnection",
                 "ofType": null
               }
             },
@@ -35612,7 +35830,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "DatoCmsHomeEdge",
+        "name": "DatoCmsHomePageEdge",
         "description": "An edge in a connection.",
         "fields": [
           {
@@ -35621,7 +35839,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHome",
+              "name": "DatoCmsHomePage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -35633,7 +35851,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHome",
+              "name": "DatoCmsHomePage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -35645,7 +35863,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHome",
+              "name": "DatoCmsHomePage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -35659,8 +35877,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "DatoCmsHome",
-        "description": "Node of type DatoCmsHome",
+        "name": "DatoCmsHomePage",
+        "description": "Node of type DatoCmsHomePage",
         "fields": [
           {
             "name": "id",
@@ -35707,12 +35925,12 @@
             "deprecationReason": null
           },
           {
-            "name": "childDatoCmsHomeIntroTextTextNode",
-            "description": "The child of this node of type datoCmsHomeIntroTextTextNode",
+            "name": "childDatoCmsHomePageIntroTextTextNode",
+            "description": "The child of this node of type datoCmsHomePageIntroTextTextNode",
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -35784,7 +36002,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHomeIntroTextTextNode",
+              "name": "DatoCmsHomePageIntroTextTextNode",
               "ofType": null
             },
             "isDeprecated": false,
@@ -36009,7 +36227,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "datoCmsHomeDistinctEnum",
+        "name": "datoCmsHomePageDistinctEnum",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -36116,7 +36334,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "datoCmsHomeGroupEnum",
+        "name": "datoCmsHomePageGroupEnum",
         "description": null,
         "fields": null,
         "inputFields": null,
@@ -36223,7 +36441,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "datoCmsHomeGroupConnectionConnection",
+        "name": "datoCmsHomePageGroupConnectionConnection",
         "description": "A connection to a list of items.",
         "fields": [
           {
@@ -36251,7 +36469,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "datoCmsHomeGroupConnectionEdge",
+                "name": "datoCmsHomePageGroupConnectionEdge",
                 "ofType": null
               }
             },
@@ -36302,7 +36520,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "datoCmsHomeGroupConnectionEdge",
+        "name": "datoCmsHomePageGroupConnectionEdge",
         "description": "An edge in a connection.",
         "fields": [
           {
@@ -36311,7 +36529,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHome",
+              "name": "DatoCmsHomePage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -36323,7 +36541,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHome",
+              "name": "DatoCmsHomePage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -36335,7 +36553,7 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "DatoCmsHome",
+              "name": "DatoCmsHomePage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -74110,6 +74328,85 @@
       },
       {
         "kind": "INPUT_OBJECT",
+        "name": "datoCmsFieldDefaultValueQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
         "name": "datoCmsModelIdQueryString_2",
         "description": null,
         "fields": null,
@@ -75317,6 +75614,16 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "datoCmsModelFieldsAppeareanceInputObject_2",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "defaultValue",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "datoCmsModelFieldsDefaultValueQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -76868,7 +77175,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeIdQueryString_2",
+        "name": "datoCmsModelFieldsDefaultValueQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -76947,7 +77254,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeIntroTextQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -77026,7 +77333,86 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeInternalInputObject_2",
+        "name": "datoCmsHomePageIntroTextTextNodeIntroTextQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageIntroTextTextNodeInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -77035,7 +77421,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeInternalTypeQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -77045,7 +77431,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeInternalMediaTypeQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeInternalMediaTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -77055,7 +77441,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeInternalContentQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeInternalContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -77065,7 +77451,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -77075,7 +77461,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextTextNodeInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageIntroTextTextNodeInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -77087,7 +77473,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeInternalTypeQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -77166,7 +77552,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeInternalMediaTypeQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeInternalMediaTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -77245,7 +77631,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeInternalContentQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeInternalContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -77324,7 +77710,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -77403,7 +77789,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextTextNodeInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageIntroTextTextNodeInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83232,7 +83618,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIdQueryString_2",
+        "name": "datoCmsHomePageIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83311,7 +83697,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeOriginalIdQueryString_2",
+        "name": "datoCmsHomePageOriginalIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83390,7 +83776,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeInternalInputObject_2",
+        "name": "datoCmsHomePageInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83399,7 +83785,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeInternalTypeQueryString_2",
+              "name": "datoCmsHomePageInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83409,7 +83795,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83419,7 +83805,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83431,7 +83817,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeInternalTypeQueryString_2",
+        "name": "datoCmsHomePageInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83510,7 +83896,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83589,7 +83975,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83668,7 +84054,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeLocaleQueryString_2",
+        "name": "datoCmsHomePageLocaleQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83747,7 +84133,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelInputObject_2",
+        "name": "datoCmsHomePageModelInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83756,7 +84142,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelIdQueryString_2",
+              "name": "datoCmsHomePageModelIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83766,7 +84152,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelOriginalIdQueryString_2",
+              "name": "datoCmsHomePageModelOriginalIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83776,7 +84162,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelInternalInputObject_2",
+              "name": "datoCmsHomePageModelInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83786,7 +84172,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelNameQueryString_2",
+              "name": "datoCmsHomePageModelNameQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83796,7 +84182,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelSingletonQueryBoolean_2",
+              "name": "datoCmsHomePageModelSingletonQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83806,7 +84192,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelSortableQueryBoolean_2",
+              "name": "datoCmsHomePageModelSortableQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83816,7 +84202,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelApiKeyQueryString_2",
+              "name": "datoCmsHomePageModelApiKeyQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83826,7 +84212,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelTreeQueryBoolean_2",
+              "name": "datoCmsHomePageModelTreeQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83836,7 +84222,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelModularBlockQueryBoolean_2",
+              "name": "datoCmsHomePageModelModularBlockQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83846,7 +84232,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelDraftModeActiveQueryBoolean_2",
+              "name": "datoCmsHomePageModelDraftModeActiveQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83856,7 +84242,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelAllLocalesRequiredQueryBoolean_2",
+              "name": "datoCmsHomePageModelAllLocalesRequiredQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83866,7 +84252,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelCollectionAppeareanceQueryString_2",
+              "name": "datoCmsHomePageModelCollectionAppeareanceQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83876,7 +84262,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelHasSingletonItemQueryBoolean_2",
+              "name": "datoCmsHomePageModelHasSingletonItemQueryBoolean_2",
               "ofType": null
             },
             "defaultValue": null
@@ -83888,7 +84274,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelIdQueryString_2",
+        "name": "datoCmsHomePageModelIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -83967,7 +84353,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelOriginalIdQueryString_2",
+        "name": "datoCmsHomePageModelOriginalIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84046,7 +84432,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelInternalInputObject_2",
+        "name": "datoCmsHomePageModelInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84055,7 +84441,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelInternalTypeQueryString_2",
+              "name": "datoCmsHomePageModelInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -84065,7 +84451,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageModelInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -84075,7 +84461,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeModelInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageModelInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -84087,7 +84473,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelInternalTypeQueryString_2",
+        "name": "datoCmsHomePageModelInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84166,7 +84552,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageModelInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84245,7 +84631,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageModelInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84324,7 +84710,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelNameQueryString_2",
+        "name": "datoCmsHomePageModelNameQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84403,7 +84789,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelSingletonQueryBoolean_2",
+        "name": "datoCmsHomePageModelSingletonQueryBoolean_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84462,7 +84848,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelSortableQueryBoolean_2",
+        "name": "datoCmsHomePageModelSortableQueryBoolean_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84521,322 +84907,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelApiKeyQueryString_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "regex",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "glob",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelTreeQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelModularBlockQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelDraftModeActiveQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelAllLocalesRequiredQueryBoolean_2",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "eq",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "ne",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "in",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "nin",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelCollectionAppeareanceQueryString_2",
+        "name": "datoCmsHomePageModelApiKeyQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84915,7 +84986,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeModelHasSingletonItemQueryBoolean_2",
+        "name": "datoCmsHomePageModelTreeQueryBoolean_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84974,7 +85045,322 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeInputObject_2",
+        "name": "datoCmsHomePageModelModularBlockQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageModelDraftModeActiveQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageModelAllLocalesRequiredQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageModelCollectionAppeareanceQueryString_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "regex",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "glob",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageModelHasSingletonItemQueryBoolean_2",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "eq",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ne",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nin",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "datoCmsHomePageIntroTextNodeInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -84983,7 +85369,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeIdQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -84993,7 +85379,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeParentQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeParentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85003,7 +85389,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeChildrenQueryList_2",
+              "name": "datoCmsHomePageIntroTextNodeChildrenQueryList_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85013,7 +85399,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeIntroTextQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeIntroTextQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85023,7 +85409,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeInternalInputObject_2",
+              "name": "datoCmsHomePageIntroTextNodeInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85035,7 +85421,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeIdQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85114,7 +85500,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeParentQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeParentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85193,7 +85579,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeChildrenQueryList_2",
+        "name": "datoCmsHomePageIntroTextNodeChildrenQueryList_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85272,7 +85658,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeIntroTextQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeIntroTextQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85351,7 +85737,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeInternalInputObject_2",
+        "name": "datoCmsHomePageIntroTextNodeInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85360,7 +85746,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeInternalTypeQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85370,7 +85756,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeInternalMediaTypeQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeInternalMediaTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85380,7 +85766,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeInternalContentQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeInternalContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85390,7 +85776,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85400,7 +85786,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeIntroTextNodeInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageIntroTextNodeInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85412,7 +85798,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeInternalTypeQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85491,7 +85877,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeInternalMediaTypeQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeInternalMediaTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85570,7 +85956,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeInternalContentQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeInternalContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85649,7 +86035,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85728,7 +86114,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextNodeInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageIntroTextNodeInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85807,7 +86193,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeIntroTextQueryString_2",
+        "name": "datoCmsHomePageIntroTextQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85886,7 +86272,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeCopyrightQueryString_2",
+        "name": "datoCmsHomePageCopyrightQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85965,7 +86351,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoSettingsInputObject_2",
+        "name": "datoCmsHomePageSeoSettingsInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -85974,7 +86360,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoSettingsTitleQueryString_2",
+              "name": "datoCmsHomePageSeoSettingsTitleQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85984,7 +86370,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoSettingsDescriptionQueryString_2",
+              "name": "datoCmsHomePageSeoSettingsDescriptionQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -85994,7 +86380,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoSettingsTwitterCardQueryString_2",
+              "name": "datoCmsHomePageSeoSettingsTwitterCardQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86006,7 +86392,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoSettingsTitleQueryString_2",
+        "name": "datoCmsHomePageSeoSettingsTitleQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86085,7 +86471,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoSettingsDescriptionQueryString_2",
+        "name": "datoCmsHomePageSeoSettingsDescriptionQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86164,7 +86550,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoSettingsTwitterCardQueryString_2",
+        "name": "datoCmsHomePageSeoSettingsTwitterCardQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86243,7 +86629,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsInputObject_2",
+        "name": "datoCmsHomePageSeoMetaTagsInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86252,7 +86638,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsIdQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsIdQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86262,7 +86648,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsParentQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsParentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86272,7 +86658,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsQueryList_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsQueryList_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86282,7 +86668,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsInternalInputObject_2",
+              "name": "datoCmsHomePageSeoMetaTagsInternalInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86294,7 +86680,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsIdQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsIdQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86373,7 +86759,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsParentQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsParentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86452,7 +86838,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsQueryList_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsQueryList_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86461,7 +86847,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsInputObject_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86473,7 +86859,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsInputObject_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86482,7 +86868,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsTagNameQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsTagNameQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86492,7 +86878,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsContentQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86502,7 +86888,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsAttributesInputObject_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsAttributesInputObject_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86514,7 +86900,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsTagNameQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsTagNameQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86593,7 +86979,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsContentQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86672,7 +87058,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsAttributesInputObject_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsAttributesInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86681,7 +87067,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsAttributesPropertyQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsAttributesPropertyQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86691,7 +87077,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsAttributesContentQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsAttributesContentQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86701,7 +87087,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsTagsAttributesNameQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsTagsAttributesNameQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86713,7 +87099,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsAttributesPropertyQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsAttributesPropertyQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86792,7 +87178,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsAttributesContentQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsAttributesContentQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86871,7 +87257,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsTagsAttributesNameQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsTagsAttributesNameQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86950,7 +87336,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsInternalInputObject_2",
+        "name": "datoCmsHomePageSeoMetaTagsInternalInputObject_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -86959,7 +87345,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsInternalTypeQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsInternalTypeQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86969,7 +87355,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsInternalContentDigestQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsInternalContentDigestQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86979,7 +87365,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "datoCmsHomeSeoMetaTagsInternalOwnerQueryString_2",
+              "name": "datoCmsHomePageSeoMetaTagsInternalOwnerQueryString_2",
               "ofType": null
             },
             "defaultValue": null
@@ -86991,7 +87377,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsInternalTypeQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsInternalTypeQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -87070,7 +87456,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsInternalContentDigestQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsInternalContentDigestQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -87149,7 +87535,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeSeoMetaTagsInternalOwnerQueryString_2",
+        "name": "datoCmsHomePageSeoMetaTagsInternalOwnerQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -87228,7 +87614,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "datoCmsHomeUpdatedAtQueryString_2",
+        "name": "datoCmsHomePageUpdatedAtQueryString_2",
         "description": null,
         "fields": null,
         "inputFields": [

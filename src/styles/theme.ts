@@ -28,7 +28,7 @@ export const theme = deepMerge(generate(baseSpacing, scale), {
       white: '#FFFFFF',
     },
     font: {
-      family: 'Rubik, sans-serif',
+      family: 'Noto Serif, sans-serif',
       weight: 300,
     },
     breakpoints: {

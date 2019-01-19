@@ -12,7 +12,7 @@ export const IndexPage: React.FC<IdxData<IndexPageQuery>> = ({ data }) => {
         <p>Index Page</p>
         <div
           dangerouslySetInnerHTML={{
-            __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
+            __html: data.datoCmsHomePage.introTextNode.childMarkdownRemark.html,
           }}
         />
         <Gallery items={data.allDatoCmsWork.edges} />
@@ -21,9 +21,9 @@ export const IndexPage: React.FC<IdxData<IndexPageQuery>> = ({ data }) => {
   )
 }
 
-export const INDEX_QUERY = graphql`
+export const INDEX_PAGE_QUERY = graphql`
   query IndexPageQuery {
-    datoCmsHome {
+    datoCmsHomePage {
       introTextNode {
         childMarkdownRemark {
           html
@@ -34,7 +34,6 @@ export const INDEX_QUERY = graphql`
     allDatoCmsWork(sort: { fields: [position], order: ASC }) {
       edges {
         node {
-          id
           title
           slug
           excerpt
