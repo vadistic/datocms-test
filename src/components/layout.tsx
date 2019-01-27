@@ -1,13 +1,39 @@
-import { Box, Grommet } from 'grommet'
+import { AnchorProps } from '@reach/router'
+import { navigateTo } from 'gatsby'
+import { Anchor, Box, Grommet } from 'grommet'
 import React, { Fragment, useState } from 'react'
-
 import { createGlobalStyle } from '../styles/styled-components'
 import { theme } from '../styles/theme'
-import { Navigation, NavigationOpenButton } from './navigation'
+import { Panel, PanelButton } from './panel'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 `
+
+interface AnchorLinkProps {
+  to: string
+}
+
+export const AnchorLink: React.FC<AnchorLinkProps & AnchorProps> = ({
+  to,
+  ...rest
+}) => (
+  <Anchor
+    size="xxlarge"
+    margin={{ vertical: 'small' }}
+    onClick={() => {
+      navigateTo(to)
+    }}
+    {...rest}
+  />
+)
+
+export const Navigation: React.FC = () => (
+  <Box as="nav" flex="grow" justify="center">
+    <AnchorLink to="/">Home</AnchorLink>
+    <AnchorLink to="/about">About</AnchorLink>
+  </Box>
+)
 
 export const Layout: React.FC = ({ children }) => {
   const [isPanelOpen, setPanel] = useState(false)
@@ -16,8 +42,13 @@ export const Layout: React.FC = ({ children }) => {
     <Fragment>
       <Grommet theme={theme}>
         <GlobalStyle />
-        <NavigationOpenButton onClick={() => setPanel(true)} />
-        <Navigation isPanelOpen={isPanelOpen} setPanel={setPanel} />
+        <PanelButton
+          onClick={() => setPanel(isOpen => !isOpen)}
+          isOpen={isPanelOpen}
+        />
+        <Panel isPanelOpen={isPanelOpen} setPanel={setPanel}>
+          <Navigation />
+        </Panel>
         <Box as="article" width="full" onClick={closePanel}>
           {children}
         </Box>

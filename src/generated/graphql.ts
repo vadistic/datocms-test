@@ -5,38 +5,24 @@
 // GraphQL query operation: NavigationQuery
 // ====================================================
 
-export interface NavigationQuery_datoCmsAboutPage_photo_fluid {
-  base64: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  sizes: string | null;
+export interface NavigationQuery_datoCmsHomePage_introTextNode_childMarkdownRemark {
+  rawMarkdownBody: string | null;
 }
 
-export interface NavigationQuery_datoCmsAboutPage_photo {
-  fluid: NavigationQuery_datoCmsAboutPage_photo_fluid | null;
-}
-
-export interface NavigationQuery_datoCmsAboutPage_bioNode_childMarkdownRemark {
-  html: string | null;
-}
-
-export interface NavigationQuery_datoCmsAboutPage_bioNode {
+export interface NavigationQuery_datoCmsHomePage_introTextNode {
   /**
    * The child of this node of type markdownRemark
    */
-  childMarkdownRemark: NavigationQuery_datoCmsAboutPage_bioNode_childMarkdownRemark | null;
+  childMarkdownRemark: NavigationQuery_datoCmsHomePage_introTextNode_childMarkdownRemark | null;
 }
 
-export interface NavigationQuery_datoCmsAboutPage {
-  title: string | null;
-  subtitle: string | null;
-  photo: NavigationQuery_datoCmsAboutPage_photo | null;
-  bioNode: NavigationQuery_datoCmsAboutPage_bioNode | null;
+export interface NavigationQuery_datoCmsHomePage {
+  introTextNode: NavigationQuery_datoCmsHomePage_introTextNode | null;
+  copyright: string | null;
 }
 
 export interface NavigationQuery {
-  datoCmsAboutPage: NavigationQuery_datoCmsAboutPage | null;
+  datoCmsHomePage: NavigationQuery_datoCmsHomePage | null;
 }
 
 /* tslint:disable */
@@ -186,7 +172,7 @@ export interface WorkQuery_datoCmsWork_seoMetaTags {
 }
 
 export interface WorkQuery_datoCmsWork_descriptionNode_childMarkdownRemark {
-  html: string | null;
+  rawMarkdownBody: string | null;
 }
 
 export interface WorkQuery_datoCmsWork_descriptionNode {
