@@ -3,6 +3,6 @@ import { Theme } from '../src/styles'
 
 declare module 'react' {
   interface Attributes {
-    css?: CSSProp<Theme>
+    css?: CSSProp<Theme> | (({ theme }: { theme: Theme }) => CSSProp<Theme>)
   }
 }

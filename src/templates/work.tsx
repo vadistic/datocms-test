@@ -3,6 +3,7 @@ import Img from 'gatsby-image'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import React from 'react'
 
+import { Markdown } from 'grommet'
 import { Layout } from '../components'
 import { WorkQuery } from '../generated/graphql'
 import { IdxData } from '../utils'
@@ -11,11 +12,10 @@ const WorkTemplate: React.FC<IdxData<WorkQuery>> = ({ data }) => (
   <Layout>
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html,
-        }}
-      />
+      <Markdown>
+        {data.datoCmsWork.descriptionNode.childMarkdownRemark.rawMarkdownBody}
+      </Markdown>
+
       <div>
         <Img fluid={data.datoCmsWork.coverImage.fluid} />
       </div>
@@ -33,7 +33,7 @@ export const WORK_TEMPLATE_QUERY = graphql`
       excerpt
       descriptionNode {
         childMarkdownRemark {
-          html
+          rawMarkdownBody
         }
       }
       coverImage {

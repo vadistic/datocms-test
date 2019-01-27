@@ -10,11 +10,25 @@ import {
   GatsbyDatoCmsFluidFragment,
   IndexPageQuery,
 } from '../generated/graphql'
+import { css, ThemeProps } from '../styles'
 import { Idx } from '../utils'
 
 type CustomPhotoProps = Idx<GatsbyDatoCmsFluidFragment>
 
 const PhotoGallery = _PhotoGallery as GalleryI<CustomPhotoProps>
+
+// zoom effect
+const imageComponentStyles = ({ theme }: ThemeProps) => css`
+  overflow: hidden;
+  .gatsby-image-wrapper {
+    transition: all ${theme.global.animation.medium};
+    &:hover {
+      z-index: 5;
+      transform: scale(1.05);
+      filter: contrast(110%);
+    }
+  }
+`
 
 const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
   photo,
@@ -31,6 +45,7 @@ const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
     }
   }
 
+  // iniline styles here
   const imgStyle: React.CSSProperties = {
     margin,
     height: photo.height,
@@ -48,7 +63,11 @@ const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
   }
 
   return (
-    <div style={imgStyle} onClick={onClick ? handleClick : undefined}>
+    <div
+      style={imgStyle}
+      css={imageComponentStyles}
+      onClick={onClick ? handleClick : undefined}
+    >
       <Img fluid={photo} />
     </div>
   )
