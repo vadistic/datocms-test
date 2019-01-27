@@ -3,13 +3,12 @@ import { Box, Button, ButtonProps, Layer } from 'grommet'
 import { Close, Menu } from 'grommet-icons'
 import React, { Fragment } from 'react'
 
-import {} from 'grommet-icons'
 import { css } from '../styles/styled-components'
 
 const navigationButtonstyles = css`
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 2;
 `
 
@@ -23,7 +22,7 @@ export const NavigationOpenButton: React.FC<ButtonProps> = props => (
 )
 
 export const NavigationCloseButton: React.FC<ButtonProps> = props => (
-  <Button plain icon={<Close size="medium" />} {...props} />
+  <Button plain color="Close" icon={<Close size="large" />} {...props} />
 )
 
 export interface PanelProps {
@@ -41,7 +40,7 @@ export const Panel: React.FC<PanelProps> = ({
     <Fragment>
       {isPanelOpen && (
         <Layer
-          position="left"
+          position="right"
           full="vertical"
           animate
           plain

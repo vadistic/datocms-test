@@ -1,5 +1,5 @@
 import { generate } from 'grommet/themes'
-// @ts-ignore
+
 import { deepMerge } from 'grommet/utils'
 
 const brandColor = '#6534FF'
