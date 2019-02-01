@@ -1,16 +1,21 @@
 import { graphql } from 'gatsby'
-import React from 'react'
+import React, { useRef } from 'react'
 
 import { Markdown } from 'grommet'
 import { Gallery, Layout } from '../components'
 import { IndexPageQuery } from '../generated/graphql'
-import { IdxData } from '../utils'
+import { IdxData, useSize, useTheme } from '../utils'
 
 export const IndexPage: React.FC<IdxData<IndexPageQuery>> = ({ data }) => {
+  const { width, height, ref } = useSize()
+
   return (
     <Layout>
-      <article>
+      <article ref={ref}>
         <code>Logo</code>
+        <p>
+          size: {width} x {height}
+        </p>
         <Markdown>
           {
             data.datoCmsHomePage.introTextNode.childMarkdownRemark
@@ -39,9 +44,11 @@ export const INDEX_PAGE_QUERY = graphql`
           title
           slug
           excerpt
+          description
+          updatedAt
           coverImage {
-            fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsFluidFragment
+            fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
             }
           }
         }

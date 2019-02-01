@@ -24,13 +24,13 @@ export const ABOUT_PAGE_QUERY = graphql`
   query AboutPageQuery {
     datoCmsAboutPage {
       seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTagsFragment
+        ...GatsbyDatoCmsSeoMetaTags
       }
       title
       subtitle
       photo {
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizesFragment
+          ...GatsbyDatoCmsSizes
         }
       }
       bioNode {

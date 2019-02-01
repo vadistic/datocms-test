@@ -36,10 +36,10 @@ export const theme = deepMerge(generate(baseSpacing, scale), {
         value: baseSpacing * 32, // 0 - 768
       },
       medium: {
-        value: baseSpacing * 48, // 0 - 1152
+        value: baseSpacing * 48, // 768 - 1152
       },
       large: {
-        value: baseSpacing * 64, // 0 - 1536
+        value: baseSpacing * 64, // 1152 - 1536
       },
     },
   },

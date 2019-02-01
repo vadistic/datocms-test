@@ -27,20 +27,19 @@ export const WORK_TEMPLATE_QUERY = graphql`
   query WorkQuery($slug: String!) {
     datoCmsWork(slug: { eq: $slug }) {
       seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTagsFragment
+        ...GatsbyDatoCmsSeoMetaTags
       }
       title
       excerpt
       descriptionNode {
         childMarkdownRemark {
           rawMarkdownBody
-
         }
       }
       coverImage {
         url
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsFluidFragment
+          ...GatsbyDatoCmsFluid
         }
       }
     }

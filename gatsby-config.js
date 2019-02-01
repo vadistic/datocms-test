@@ -2,7 +2,7 @@ require('./scripts/env-config').configure()
 
 module.exports = {
   siteMetadata: {
-    title: `Generic Portfolio`,
+    title: `Generic Portfolio Starter`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -6,14 +6,14 @@ import _PhotoGallery, {
   PhotoClickHandler,
 } from 'react-photo-gallery'
 
-import {
-  GatsbyDatoCmsFluidFragment,
-  IndexPageQuery,
-} from '../generated/graphql'
+import { navigateTo } from 'gatsby'
+import { GatsbyDatoCmsFluid, IndexPageQuery } from '../generated/graphql'
 import { css, ThemeProps } from '../styles'
 import { Idx } from '../utils'
 
-type CustomPhotoProps = Idx<GatsbyDatoCmsFluidFragment>
+type CustomPhotoProps = Idx<GatsbyDatoCmsFluid> & {
+  node: Idx<IndexPageQuery>['allDatoCmsWork']['edges'][number]['node']
+}
 
 const PhotoGallery = _PhotoGallery as GalleryI<CustomPhotoProps>
 
@@ -125,6 +125,7 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
   const photos = items.map(({ node }) => {
     const aspectRatio = fixAspectRatio(node.coverImage.fluid.aspectRatio)
     return {
+      node,
       ...node.coverImage.fluid,
       aspectRatio,
       height: 1,
@@ -132,8 +133,8 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
     }
   })
 
-  const onClick: PhotoClickHandler<CustomPhotoProps> = () => {
-    // noop
+  const onClick: PhotoClickHandler<CustomPhotoProps> = (ev, { photo }) => {
+    navigateTo('/works/' + photo.node.slug)
   }
 
   return (

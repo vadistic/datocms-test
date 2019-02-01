@@ -4,7 +4,7 @@ import { Close, Menu } from 'grommet-icons'
 import React from 'react'
 import { NavigationQuery } from '../generated/graphql'
 import { css } from '../styles'
-import { Idx } from '../utils'
+import { Idx, useTheme } from '../utils'
 
 const navigationButtonstyles = css`
   position: fixed;
@@ -41,6 +41,9 @@ export const Panel: React.FC<PanelProps> = ({
   setPanel,
 }) => {
   const closePanel = () => setPanel(false)
+
+  const theme = useTheme()
+
   return (
     <>
       {isPanelOpen && (
@@ -94,7 +97,6 @@ const NAVIGATION_QUERY = graphql`
       introTextNode {
         childMarkdownRemark {
           rawMarkdownBody
-
         }
       }
       copyright

@@ -1,8 +1,8 @@
 import { AnchorProps } from '@reach/router'
 import { navigateTo } from 'gatsby'
 import { Anchor, Box, Grommet } from 'grommet'
-import React, { Fragment, useState } from 'react'
-import { createGlobalStyle } from '../styles/styled-components'
+import React, { useState } from 'react'
+import { createGlobalStyle, ThemeProvider } from '../styles/styled-components'
 import { theme } from '../styles/theme'
 import { Panel, PanelButton } from './panel'
 
@@ -39,7 +39,8 @@ export const Layout: React.FC = ({ children }) => {
   const [isPanelOpen, setPanel] = useState(false)
   const closePanel = () => setPanel(false)
   return (
-    <Fragment>
+    <>
+      {/* Grommet acts as styled-components theme provider! */}
       <Grommet theme={theme}>
         <GlobalStyle />
         <PanelButton
@@ -53,6 +54,6 @@ export const Layout: React.FC = ({ children }) => {
           {children}
         </Box>
       </Grommet>
-    </Fragment>
+    </>
   )
 }
