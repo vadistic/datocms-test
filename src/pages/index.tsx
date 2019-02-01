@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
+import { Markdown } from 'grommet'
 import { Gallery, Layout } from '../components'
 import { IndexPageQuery } from '../generated/graphql'
 import { IdxData } from '../utils'
@@ -9,12 +10,13 @@ export const IndexPage: React.FC<IdxData<IndexPageQuery>> = ({ data }) => {
   return (
     <Layout>
       <article>
-        <p>Index Page</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: data.datoCmsHomePage.introTextNode.childMarkdownRemark.html,
-          }}
-        />
+        <code>Logo</code>
+        <Markdown>
+          {
+            data.datoCmsHomePage.introTextNode.childMarkdownRemark
+              .rawMarkdownBody
+          }
+        </Markdown>
         <Gallery items={data.allDatoCmsWork.edges} />
       </article>
     </Layout>
@@ -26,7 +28,7 @@ export const INDEX_PAGE_QUERY = graphql`
     datoCmsHomePage {
       introTextNode {
         childMarkdownRemark {
-          html
+          rawMarkdownBody
         }
       }
       copyright

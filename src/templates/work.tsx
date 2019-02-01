@@ -34,6 +34,7 @@ export const WORK_TEMPLATE_QUERY = graphql`
       descriptionNode {
         childMarkdownRemark {
           rawMarkdownBody
+
         }
       }
       coverImage {

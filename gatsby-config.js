@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('./scripts/env-config').configure()
 
 module.exports = {
   siteMetadata: {

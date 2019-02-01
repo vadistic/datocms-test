@@ -2730,11 +2730,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "sitePageConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "sitePageConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -8082,11 +8086,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "sitePluginConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "sitePluginConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -11387,11 +11395,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsFieldConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsFieldConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -14282,11 +14294,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsModelConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsModelConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -18233,11 +18249,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsHomePageIntroTextTextNodeConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsHomePageIntroTextTextNodeConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -19464,6 +19484,26 @@
                   "ofType": null
                 },
                 "defaultValue": "\"fields.slug\""
+              },
+              {
+                "name": "maxDepth",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "heading",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {
@@ -20097,11 +20137,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsSeoMetaTagsConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsSeoMetaTagsConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -21728,11 +21772,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsAssetConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsAssetConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -23166,7 +23214,7 @@
       {
         "kind": "SCALAR",
         "name": "Float",
-        "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
+        "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point). ",
         "fields": null,
         "inputFields": null,
         "interfaces": null,
@@ -27246,11 +27294,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsAboutPageBioTextNodeConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsAboutPageBioTextNodeConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -28628,11 +28680,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsWorkExcerptTextNodeConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsWorkExcerptTextNodeConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -29980,11 +30036,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsWorkDescriptionTextNodeConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsWorkDescriptionTextNodeConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -31362,11 +31422,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsHomePageConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsHomePageConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -36593,11 +36657,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsSocialProfileConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsSocialProfileConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -40667,11 +40735,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsAboutPageConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsAboutPageConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -46640,11 +46712,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsWorkConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsWorkConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -54706,11 +54782,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsFaviconMetaTagsConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsFaviconMetaTagsConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -56539,11 +56619,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "datoCmsSiteConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "datoCmsSiteConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -63480,11 +63564,15 @@
             "name": "order",
             "description": null,
             "type": {
-              "kind": "ENUM",
-              "name": "markdownRemarkConnectionSortOrderValues",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "markdownRemarkConnectionSortOrderValues",
+                "ofType": null
+              }
             },
-            "defaultValue": "ASC"
+            "defaultValue": "[ASC]"
           }
         ],
         "interfaces": null,
@@ -110615,54 +110703,6 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "onOperation",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "isDeprecated": true,
-            "deprecationReason": "Use `locations`."
-          },
-          {
-            "name": "onFragment",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "isDeprecated": true,
-            "deprecationReason": "Use `locations`."
-          },
-          {
-            "name": "onField",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "isDeprecated": true,
-            "deprecationReason": "Use `locations`."
           }
         ],
         "inputFields": null,
@@ -110717,6 +110757,12 @@
           {
             "name": "INLINE_FRAGMENT",
             "description": "Location adjacent to an inline fragment.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "VARIABLE_DEFINITION",
+            "description": "Location adjacent to a variable definition.",
             "isDeprecated": false,
             "deprecationReason": null
           },

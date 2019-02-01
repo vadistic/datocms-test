@@ -94,6 +94,7 @@ const NAVIGATION_QUERY = graphql`
       introTextNode {
         childMarkdownRemark {
           rawMarkdownBody
+
         }
       }
       copyright
