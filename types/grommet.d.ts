@@ -1,30 +1,23 @@
-import {
-  AnchorProps,
-  Button,
-  ButtonProps,
-  HeadingProps,
-  ParagraphProps,
-} from 'grommet'
+import { AnchorProps, Button, ButtonProps, HeadingProps, ParagraphProps } from 'grommet'
 import React from 'react'
-
-type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
+import { Omit } from '../src/utils/types'
 
 declare module 'grommet' {
-  const Button: React.ComponentType<
-    ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>
-  >
+  interface ThemeContextI<ThemeValue = object> extends React.Context<ThemeValue> {
+    Extend: React.ComponentType<{ value: ThemeValue }>
+  }
 
-  const Anchor: React.ComponentType<
-    AnchorProps & Omit<JSX.IntrinsicElements['button'], 'color'>
-  >
+  const ThemeContext: ThemeContextI
 
-  const Heading: React.ComponentType<
-    HeadingProps & Omit<JSX.IntrinsicElements['h1'], 'color'>
-  >
+  type ResponsiveContextI<ResponsiveValue = string> = React.Context<ResponsiveValue>
 
-  const Paragraph: React.ComponentType<
-    ParagraphProps & Omit<JSX.IntrinsicElements['p'], 'color'>
-  >
+  const ResponsiveContext: ResponsiveContextI
+
+  const Button: React.ComponentType<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>
+
+  const Anchor: React.ComponentType<AnchorProps & Omit<JSX.IntrinsicElements['button'], 'color'>>
+
+  const Heading: React.ComponentType<HeadingProps & Omit<JSX.IntrinsicElements['h1'], 'color'>>
+
+  const Paragraph: React.ComponentType<ParagraphProps & Omit<JSX.IntrinsicElements['p'], 'color'>>
 }
-
-export * from 'grommet'
