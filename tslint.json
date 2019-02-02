@@ -23,8 +23,7 @@
       "allow-leading-underscore"
     ]
   },
-  "jsRules": {},
   "linterOptions": {
-    "exclude": ["src/generated/*", "node_modules/**/*"]
+    "exclude": ["src/generated/**", "node_modules/**"]
   }
 }
