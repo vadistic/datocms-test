@@ -4,7 +4,7 @@ import { deepMerge } from 'grommet/utils'
 
 const brandColor = '#6534FF'
 
-const baseSpacing = 24
+const baseSpacing = 28
 const scale = 8
 
 export const theme = deepMerge(generate(baseSpacing, scale), {

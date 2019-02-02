@@ -3,17 +3,19 @@ import Img from 'gatsby-image'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import React from 'react'
 
-import { Heading, Markdown, Paragraph } from 'grommet'
-import { Layout } from '../components'
+import { Box, Heading, Markdown, Paragraph } from 'grommet'
+import { Layout, PageType } from '../components'
 import { AboutPageQuery } from '../generated/graphql'
 import { IdxData } from '../utils'
 
 const AboutPage: React.FC<IdxData<AboutPageQuery>> = ({ data }) => (
-  <Layout>
+  <Layout pageType={PageType.About}>
     <HelmetDatoCms seo={data.datoCmsAboutPage.seoMetaTags} />
-    <Heading>{data.datoCmsAboutPage.title}</Heading>
-    <Paragraph>{data.datoCmsAboutPage.subtitle}</Paragraph>
-    <Img fluid={data.datoCmsAboutPage.photo.fluid} />
+    <Heading size="large">{data.datoCmsAboutPage.title}</Heading>
+    <Paragraph size="xlarge">{data.datoCmsAboutPage.subtitle}</Paragraph>
+    <Box margin={{ vertical: 'large' }}>
+      <Img fluid={data.datoCmsAboutPage.photo.fluid} />
+    </Box>
     <Markdown>
       {data.datoCmsAboutPage.bioNode.childMarkdownRemark.rawMarkdownBody}
     </Markdown>

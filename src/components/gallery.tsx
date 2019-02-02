@@ -1,3 +1,4 @@
+import { navigateTo } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 import _PhotoGallery, {
@@ -5,8 +6,6 @@ import _PhotoGallery, {
   ImageComponentProps,
   PhotoClickHandler,
 } from 'react-photo-gallery'
-
-import { navigateTo } from 'gatsby'
 import { GatsbyDatoCmsFluid, IndexPageQuery } from '../generated/graphql'
 import { css, ThemeProps } from '../styles'
 import { Idx } from '../utils'
@@ -139,7 +138,7 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
 
   return (
     <PhotoGallery
-      margin={4}
+      margin={0}
       photos={photos}
       direction="column"
       columns={getColumns}

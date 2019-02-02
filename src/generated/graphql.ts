@@ -5,22 +5,9 @@
 // GraphQL query operation: NavigationQuery
 // ====================================================
 
-export interface NavigationQuery_datoCmsHomePage_introTextNode_childMarkdownRemark {
-  __typename: "MarkdownRemark";
-  rawMarkdownBody: string | null;
-}
-
-export interface NavigationQuery_datoCmsHomePage_introTextNode {
-  __typename: "DatoCmsHomePageIntroTextTextNode";
-  /**
-   * The child of this node of type markdownRemark
-   */
-  childMarkdownRemark: NavigationQuery_datoCmsHomePage_introTextNode_childMarkdownRemark | null;
-}
-
 export interface NavigationQuery_datoCmsHomePage {
   __typename: "DatoCmsHomePage";
-  introTextNode: NavigationQuery_datoCmsHomePage_introTextNode | null;
+  introText: string | null;
   copyright: string | null;
 }
 
@@ -102,25 +89,6 @@ export interface AboutPageQuery {
 // GraphQL query operation: IndexPageQuery
 // ====================================================
 
-export interface IndexPageQuery_datoCmsHomePage_introTextNode_childMarkdownRemark {
-  __typename: "MarkdownRemark";
-  rawMarkdownBody: string | null;
-}
-
-export interface IndexPageQuery_datoCmsHomePage_introTextNode {
-  __typename: "DatoCmsHomePageIntroTextTextNode";
-  /**
-   * The child of this node of type markdownRemark
-   */
-  childMarkdownRemark: IndexPageQuery_datoCmsHomePage_introTextNode_childMarkdownRemark | null;
-}
-
-export interface IndexPageQuery_datoCmsHomePage {
-  __typename: "DatoCmsHomePage";
-  introTextNode: IndexPageQuery_datoCmsHomePage_introTextNode | null;
-  copyright: string | null;
-}
-
 export interface IndexPageQuery_allDatoCmsWork_edges_node_coverImage_fluid {
   __typename: "DatoCmsFluid";
   base64: string | null;
@@ -139,7 +107,10 @@ export interface IndexPageQuery_allDatoCmsWork_edges_node {
   __typename: "DatoCmsWork";
   title: string | null;
   slug: string | null;
+  tags: string | null;
   excerpt: string | null;
+  description: string | null;
+  updatedAt: any | null;
   coverImage: IndexPageQuery_allDatoCmsWork_edges_node_coverImage | null;
 }
 
@@ -160,7 +131,6 @@ export interface IndexPageQuery_allDatoCmsWork {
 }
 
 export interface IndexPageQuery {
-  datoCmsHomePage: IndexPageQuery_datoCmsHomePage | null;
   /**
    * Connection to all DatoCmsWork nodes
    */
@@ -217,8 +187,21 @@ export interface WorkQuery_datoCmsWork_coverImage_fluid {
 
 export interface WorkQuery_datoCmsWork_coverImage {
   __typename: "DatoCmsAsset";
-  url: string | null;
   fluid: WorkQuery_datoCmsWork_coverImage_fluid | null;
+}
+
+export interface WorkQuery_datoCmsWork_gallery_fluid {
+  __typename: "DatoCmsFluid";
+  base64: string | null;
+  aspectRatio: number | null;
+  src: string | null;
+  srcSet: string | null;
+  sizes: string | null;
+}
+
+export interface WorkQuery_datoCmsWork_gallery {
+  __typename: "DatoCmsAsset";
+  fluid: WorkQuery_datoCmsWork_gallery_fluid | null;
 }
 
 export interface WorkQuery_datoCmsWork {
@@ -228,6 +211,7 @@ export interface WorkQuery_datoCmsWork {
   excerpt: string | null;
   descriptionNode: WorkQuery_datoCmsWork_descriptionNode | null;
   coverImage: WorkQuery_datoCmsWork_coverImage | null;
+  gallery: (WorkQuery_datoCmsWork_gallery | null)[] | null;
 }
 
 export interface WorkQuery {

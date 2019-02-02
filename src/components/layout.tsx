@@ -1,58 +1,72 @@
-import { AnchorProps } from '@reach/router'
-import { navigateTo } from 'gatsby'
-import { Anchor, Box, Grommet } from 'grommet'
-import React, { useState } from 'react'
-import { createGlobalStyle, ThemeProvider } from '../styles/styled-components'
-import { theme } from '../styles/theme'
-import { Panel, PanelButton } from './panel'
+import { Grommet } from 'grommet'
+import React from 'react'
+import { createGlobalStyle, css, theme, ThemeProps } from '../styles'
+import { Navigation } from './navigation'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 `
+const layoutStyles = ({ theme: t }: ThemeProps) => css`
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
-interface AnchorLinkProps {
-  to: string
+  main {
+    margin-top: ${theme.global.edgeSize.large};
+
+    margin-left: ${theme.global.spacingValue * 12}px;
+    margin-right: ${theme.global.spacingValue * 8}px;
+  }
+
+  .navigation {
+    position: fixed;
+    width: ${theme.global.spacingValue * 12}px;
+  }
+
+  @media (max-width: ${t.global.breakpoints.large.value}px) {
+    main {
+      margin-left: ${theme.global.spacingValue * 10}px;
+      margin-right: ${theme.global.spacingValue * 4}px;
+    }
+
+    .navigation {
+      width: ${theme.global.spacingValue * 10}px;
+    }
+  }
+
+  @media (max-width: ${t.global.breakpoints.medium.value}px) {
+    main {
+      margin-right: ${theme.global.edgeSize.large};
+    }
+  }
+
+  @media (max-width: ${t.global.breakpoints.small.value}px) {
+    main {
+      margin: ${theme.global.edgeSize.small};
+    }
+  }
+`
+
+export enum PageType {
+  Home,
+  About,
+  Work,
 }
 
-export const AnchorLink: React.FC<AnchorLinkProps & AnchorProps> = ({
-  to,
-  ...rest
-}) => (
-  <Anchor
-    size="xxlarge"
-    margin={{ vertical: 'small' }}
-    onClick={() => {
-      navigateTo(to)
-    }}
-    {...rest}
-  />
-)
+export interface LayoutProps {
+  pageType: PageType
+}
 
-export const Navigation: React.FC = () => (
-  <Box as="nav" flex="grow" justify="center">
-    <AnchorLink to="/">Home</AnchorLink>
-    <AnchorLink to="/about">About</AnchorLink>
-  </Box>
-)
-
-export const Layout: React.FC = ({ children }) => {
-  const [isPanelOpen, setPanel] = useState(false)
-  const closePanel = () => setPanel(false)
+export const Layout: React.FC<LayoutProps> = ({ children, pageType }) => {
   return (
     <>
       {/* Grommet acts as styled-components theme provider! */}
-      <Grommet theme={theme}>
+      <Grommet theme={theme} full>
         <GlobalStyle />
-        <PanelButton
-          onClick={() => setPanel(isOpen => !isOpen)}
-          isOpen={isPanelOpen}
-        />
-        <Panel isPanelOpen={isPanelOpen} setPanel={setPanel}>
-          <Navigation />
-        </Panel>
-        <Box as="article" width="full" onClick={closePanel}>
-          {children}
-        </Box>
+        <div css={layoutStyles}>
+          <Navigation pageType={pageType} />
+          <main>{children}</main>
+        </div>
       </Grommet>
     </>
   )
