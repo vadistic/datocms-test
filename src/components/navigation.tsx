@@ -1,7 +1,12 @@
 import { graphql, navigate } from 'gatsby'
 import { StaticQuery } from 'gatsby'
 import { Box, Keyboard, Text } from 'grommet'
-import React, { KeyboardEventHandler, useContext, useEffect } from 'react'
+import React, {
+  Fragment,
+  KeyboardEventHandler,
+  useContext,
+  useEffect,
+} from 'react'
 import { NavigationQuery } from '../generated/graphql'
 import { css, ThemeProps } from '../styles'
 import { Idx } from '../utils'
@@ -41,7 +46,7 @@ export const TagLinks: React.FC = () => {
   }
 
   return (
-    <>
+    <Fragment>
       {allTags.map(tag => (
         <Link
           key={tag}
@@ -52,7 +57,7 @@ export const TagLinks: React.FC = () => {
           {tag}
         </Link>
       ))}
-    </>
+    </Fragment>
   )
 }
 
@@ -102,7 +107,7 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
   )
 }
 
-export const navigationQuery = graphql`
+const navigationQuery = graphql`
   query NavigationQuery {
     datoCmsHomePage {
       introText

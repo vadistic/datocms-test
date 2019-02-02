@@ -1,5 +1,5 @@
 import { Grommet } from 'grommet'
-import React from 'react'
+import React, { Fragment } from 'react'
 import { createGlobalStyle, css, theme, ThemeProps } from '../styles'
 import { Navigation } from './navigation'
 
@@ -59,7 +59,7 @@ export interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children, pageType }) => {
   return (
-    <>
+    <Fragment>
       {/* Grommet acts as styled-components theme provider! */}
       <Grommet theme={theme} full>
         <GlobalStyle />
@@ -68,6 +68,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, pageType }) => {
           <main>{children}</main>
         </div>
       </Grommet>
-    </>
+    </Fragment>
   )
 }
