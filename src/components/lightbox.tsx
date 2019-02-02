@@ -11,11 +11,11 @@ import { Idx } from '../utils'
 
 export interface LightboxProps {
   cover: Idx<WorkQuery_datoCmsWork['coverImage']>
-  gallery: Idx<WorkQuery_datoCmsWork['gallery']>
+  gallery?: Idx<WorkQuery_datoCmsWork['gallery']>
 }
 
 export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
-  const images = [cover, ...gallery].map(img => img.fluid)
+  const images = [cover].map(img => img.fluid)
 
   return <Img fluid={images[0]} />
 }

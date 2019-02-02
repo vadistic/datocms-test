@@ -10,10 +10,7 @@ const WorkTemplate: React.FC<IdxData<WorkQuery>> = ({ data }) => {
   return (
     <Layout pageType={PageType.Work}>
       <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
-      <Lightbox
-        cover={data.datoCmsWork.coverImage}
-        gallery={data.datoCmsWork.gallery}
-      />
+      <Lightbox cover={data.datoCmsWork.coverImage} />
       <Box as="article" margin={{ horizontal: 'large' }}>
         <Box margin={{ vertical: 'large' }}>
           <Heading size="large">{data.datoCmsWork.title}</Heading>
@@ -47,16 +44,8 @@ export const WORK_TEMPLATE_QUERY = graphql`
           rawMarkdownBody
         }
       }
+
       coverImage {
-        fluid(
-          maxWidth: 2000
-          maxHeight: 2000
-          imgixParams: { fm: "jpg", auto: "compress" }
-        ) {
-          ...GatsbyDatoCmsFluid
-        }
-      }
-      gallery {
         fluid(
           maxWidth: 2000
           maxHeight: 2000
