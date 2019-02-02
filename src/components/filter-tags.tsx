@@ -6,6 +6,4 @@ export interface FilterTagsContextValue {
   setTagsFilter: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-export const FilterTagsContext = React.createContext(
-  {} as FilterTagsContextValue,
-)
+export const FilterTagsContext = React.createContext({} as FilterTagsContextValue)

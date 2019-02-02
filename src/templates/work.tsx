@@ -20,10 +20,7 @@ const WorkTemplate: React.FC<IdxData<WorkQuery>> = ({ data }) => {
         </Box>
         <Box>
           <Markdown>
-            {
-              data.datoCmsWork.descriptionNode.childMarkdownRemark
-                .rawMarkdownBody
-            }
+            {data.datoCmsWork.descriptionNode.childMarkdownRemark.rawMarkdownBody}
           </Markdown>
         </Box>
       </Box>
@@ -46,11 +43,7 @@ export const WORK_TEMPLATE_QUERY = graphql`
       }
 
       coverImage {
-        fluid(
-          maxWidth: 2000
-          maxHeight: 2000
-          imgixParams: { fm: "jpg", auto: "compress" }
-        ) {
+        fluid(maxWidth: 2000, maxHeight: 1600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid
         }
       }

@@ -1,4 +1,3 @@
-import { RouteComponentProps } from '@reach/router'
 import { graphql } from 'gatsby'
 import React, { useState } from 'react'
 import { FilterTagsContext, Gallery, Layout, PageType } from '../components'
@@ -6,8 +5,7 @@ import { IndexPageQuery } from '../generated/graphql'
 import { IdxData } from '../utils'
 
 export const IndexPage: React.FC<IdxData<IndexPageQuery>> = ({ data }) => {
-  const onlyUnique = (value: string, index: number, self: string[]) =>
-    self.indexOf(value) === index
+  const onlyUnique = (value: string, index: number, self: string[]) => self.indexOf(value) === index
 
   const allTags = data.allDatoCmsWork.edges
     .map(edge => edge.node.tags.split(', '))

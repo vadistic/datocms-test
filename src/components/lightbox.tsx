@@ -1,12 +1,6 @@
 import Img from 'gatsby-image'
 import React from 'react'
-import {
-  GatsbyDatoCmsFluid,
-  WorkQuery,
-  WorkQuery_datoCmsWork,
-  WorkQuery_datoCmsWork_coverImage,
-  WorkQuery_datoCmsWork_gallery,
-} from '../generated/graphql'
+import { WorkQuery_datoCmsWork } from '../generated/graphql'
 import { Idx } from '../utils'
 
 export interface LightboxProps {
@@ -14,7 +8,7 @@ export interface LightboxProps {
   gallery?: Idx<WorkQuery_datoCmsWork['gallery']>
 }
 
-export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
+export const Lightbox: React.FC<LightboxProps> = ({ cover }) => {
   const images = [cover].map(img => img.fluid)
 
   return <Img fluid={images[0]} />

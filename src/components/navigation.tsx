@@ -1,12 +1,7 @@
 import { graphql, navigate } from 'gatsby'
 import { StaticQuery } from 'gatsby'
 import { Box, Keyboard, Text } from 'grommet'
-import React, {
-  Fragment,
-  KeyboardEventHandler,
-  useContext,
-  useEffect,
-} from 'react'
+import React, { Fragment, useContext } from 'react'
 import { NavigationQuery } from '../generated/graphql'
 import { css, ThemeProps } from '../styles'
 import { Idx } from '../utils'
@@ -66,7 +61,7 @@ export interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
-  const { allTags, setTagsFilter, tagsFilter } = useContext(FilterTagsContext)
+  const { setTagsFilter } = useContext(FilterTagsContext)
 
   const handleEsc = () => {
     if (pageType !== PageType.Home) {
@@ -95,7 +90,7 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
             </Box>
           )}
         </div>
-        <StaticQuery<Idx<NavigationQuery>> query={navigationQuery}>
+        <StaticQuery<Idx<NavigationQuery>> query={NAVIGATION_QUERY}>
           {data => (
             <aside>
               <Text size="xsmall">{data.datoCmsHomePage.introText}</Text>
@@ -107,7 +102,9 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
   )
 }
 
-const navigationQuery = graphql`
+// ! static queries cannot be exported or netlify build will break
+// https://github.com/gatsbyjs/gatsby/issues/6350
+const NAVIGATION_QUERY = graphql`
   query NavigationQuery {
     datoCmsHomePage {
       introText

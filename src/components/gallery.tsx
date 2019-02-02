@@ -1,4 +1,4 @@
-import { navigateTo } from 'gatsby'
+import { navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 import _PhotoGallery, {
@@ -62,11 +62,7 @@ const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
   }
 
   return (
-    <div
-      style={imgStyle}
-      css={imageComponentStyles}
-      onClick={onClick ? handleClick : undefined}
-    >
+    <div style={imgStyle} css={imageComponentStyles} onClick={onClick ? handleClick : undefined}>
       <Img fluid={photo} />
     </div>
   )
@@ -133,7 +129,7 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
   })
 
   const onClick: PhotoClickHandler<CustomPhotoProps> = (ev, { photo }) => {
-    navigateTo('/works/' + photo.node.slug)
+    navigate('/works/' + photo.node.slug)
   }
 
   return (

@@ -16,9 +16,7 @@ const AboutPage: React.FC<IdxData<AboutPageQuery>> = ({ data }) => (
     <Box margin={{ vertical: 'large' }}>
       <Img fluid={data.datoCmsAboutPage.photo.fluid} />
     </Box>
-    <Markdown>
-      {data.datoCmsAboutPage.bioNode.childMarkdownRemark.rawMarkdownBody}
-    </Markdown>
+    <Markdown>{data.datoCmsAboutPage.bioNode.childMarkdownRemark.rawMarkdownBody}</Markdown>
   </Layout>
 )
 
@@ -31,8 +29,8 @@ export const ABOUT_PAGE_QUERY = graphql`
       title
       subtitle
       photo {
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+        fluid(maxWidth: 1200, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
       bioNode {
