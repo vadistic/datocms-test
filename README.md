@@ -1,3 +1,17 @@
 # Gatsby Portfolio Website
 
-_Btw. it's not mine portfolio_, just giving it a try :)
+Btw. _it's not mine portfolio_, just giving design a try :)
+
+## Features:
+- Gatsby
+- Typescript
+- Grommet
+- `styled-components`
+- DatoCms
+- Codegen with `apollo`
+- Custom typings
+- Some Hooks
+
+## TODO
+- Lightbox
+- Animations
