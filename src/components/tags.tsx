@@ -1,9 +1,9 @@
 import React from 'react'
 
-export interface FilterTagsContextValue {
+export interface TagsContextValue {
   allTags: string[]
   tagsFilter: string[]
   setTagsFilter: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-export const FilterTagsContext = React.createContext({} as FilterTagsContextValue)
+export const TagsContext = React.createContext({} as TagsContextValue)

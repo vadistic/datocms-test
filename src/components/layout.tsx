@@ -1,51 +1,63 @@
 import { Grommet } from 'grommet'
-import React, { Fragment } from 'react'
-import { createGlobalStyle, css, theme, ThemeProps } from '../styles'
+import React from 'react'
+import { css, media, theme, ThemeProps } from '../styles'
+import { Footer } from './footer'
 import { Navigation } from './navigation'
 
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
-`
 const layoutStyles = ({ theme: t }: ThemeProps) => css`
+
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   position: relative;
 
-  main {
-    margin-top: ${theme.global.edgeSize.large};
-
-    margin-left: ${theme.global.spacingValue * 12}px;
-    margin-right: ${theme.global.spacingValue * 8}px;
-  }
-
   .navigation {
+    visibility: hidden;
     position: fixed;
-    width: ${theme.global.spacingValue * 12}px;
+    padding: ${theme.global.edgeSize.large} ${theme.global.edgeSize.medium};
   }
 
-  @media (max-width: ${t.global.breakpoints.large.value}px) {
+  main {
+    margin: ${theme.global.edgeSize.small};
+  }
+
+  footer {
+    padding: ${theme.global.edgeSize.large} 0;
+  }
+
+  ${media.small(css`
+    main {
+      margin: ${theme.global.edgeSize.large};
+      margin-bottom: 0;
+    }
+  `)}
+
+  ${media.medium(css`
+    .navigation {
+      visibility: visible;
+      width: ${theme.global.spacingValue * 10}px;
+    }
+
     main {
       margin-left: ${theme.global.spacingValue * 10}px;
       margin-right: ${theme.global.spacingValue * 4}px;
     }
+  `)}
 
+  ${media.large(css`
     .navigation {
-      width: ${theme.global.spacingValue * 10}px;
+      width: ${theme.global.spacingValue * 12}px;
     }
-  }
 
-  @media (max-width: ${t.global.breakpoints.medium.value}px) {
     main {
-      margin-right: ${theme.global.edgeSize.large};
-    }
-  }
+      margin-top: ${theme.global.edgeSize.large};
 
-  @media (max-width: ${t.global.breakpoints.small.value}px) {
-    main {
-      margin: ${theme.global.edgeSize.small};
+      margin-left: ${theme.global.spacingValue * 12}px;
+      margin-right: ${theme.global.spacingValue * 8}px;
     }
-  }
-`
+  `)}
+
+  `
 
 export enum PageType {
   Home,
@@ -59,15 +71,12 @@ export interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children, pageType }) => {
   return (
-    <Fragment>
-      {/* Grommet acts as styled-components theme provider! */}
-      <Grommet theme={theme} full>
-        <GlobalStyle />
-        <div css={layoutStyles}>
-          <Navigation pageType={pageType} />
-          <main>{children}</main>
-        </div>
-      </Grommet>
-    </Fragment>
+    <Grommet theme={theme} full>
+      <div css={layoutStyles}>
+        <Navigation pageType={pageType} />
+        <main>{children}</main>
+        <Footer />
+      </div>
+    </Grommet>
   )
 }

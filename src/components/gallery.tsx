@@ -1,5 +1,6 @@
 import { navigate } from 'gatsby'
 import Img from 'gatsby-image'
+import { Box, Heading, Stack, Text } from 'grommet'
 import React from 'react'
 import _PhotoGallery, {
   GalleryI,
@@ -19,12 +20,37 @@ const PhotoGallery = _PhotoGallery as GalleryI<CustomPhotoProps>
 // zoom effect
 const imageComponentStyles = ({ theme }: ThemeProps) => css`
   overflow: hidden;
+  position: relative;
+
   .gatsby-image-wrapper {
     transition: all ${theme.global.animation.medium};
-    &:hover {
-      z-index: 5;
+  }
+
+  figcaption {
+    transition: all ${theme.global.animation.medium};
+
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0.001;
+
+    margin: ${theme.global.edgeSize.small};
+  }
+
+  &:hover {
+    .gatsby-image-wrapper {
       transform: scale(1.05);
-      filter: contrast(110%);
+      opacity: 0.2;
+
+      filter: grayscale(100%);
+    }
+
+    figcaption {
+      visibility: visible;
+      opacity: 1;
+      max-height: 100%;
+      overflow: hidden;
     }
   }
 `
@@ -62,9 +88,20 @@ const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
   }
 
   return (
-    <div style={imgStyle} css={imageComponentStyles} onClick={onClick ? handleClick : undefined}>
+    <Box
+      style={imgStyle}
+      css={imageComponentStyles}
+      onClick={onClick ? handleClick : undefined}
+      animation="fadeIn"
+      className="figure"
+      as="figure"
+    >
+      <Box as="figcaption" className="figcaption">
+        <Heading level="4">{photo.node.title}</Heading>
+        <Text size="xsmall">{photo.node.excerpt}</Text>
+      </Box>
       <Img fluid={photo} />
-    </div>
+    </Box>
   )
 }
 

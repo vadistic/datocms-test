@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React, { useState } from 'react'
-import { FilterTagsContext, Gallery, Layout, PageType } from '../components'
+import { Gallery, Layout, PageType, TagsContext } from '../components'
 import { IndexPageQuery } from '../generated/graphql'
 import { IdxData } from '../utils'
 
@@ -22,13 +22,13 @@ export const IndexPage: React.FC<IdxData<IndexPageQuery>> = ({ data }) => {
         )
 
   return (
-    <FilterTagsContext.Provider value={{ allTags, tagsFilter, setTagsFilter }}>
+    <TagsContext.Provider value={{ allTags, tagsFilter, setTagsFilter }}>
       <Layout pageType={PageType.Home}>
         <article>
           <Gallery items={items} />
         </article>
       </Layout>
-    </FilterTagsContext.Provider>
+    </TagsContext.Provider>
   )
 }
 

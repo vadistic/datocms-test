@@ -2,17 +2,72 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: FooterQuery
+// ====================================================
+
+export interface FooterQuery_datoCmsHomePage {
+  __typename: "DatoCmsHomePage";
+  copyright: string | null;
+}
+
+export interface FooterQuery {
+  datoCmsHomePage: FooterQuery_datoCmsHomePage | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: NavigationQuery
 // ====================================================
 
 export interface NavigationQuery_datoCmsHomePage {
   __typename: "DatoCmsHomePage";
   introText: string | null;
-  copyright: string | null;
 }
 
 export interface NavigationQuery {
   datoCmsHomePage: NavigationQuery_datoCmsHomePage | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: SocialQuery
+// ====================================================
+
+export interface SocialQuery_allDatoCmsSocialProfile_edges_node {
+  __typename: "DatoCmsSocialProfile";
+  /**
+   * The id of this node.
+   */
+  id: string;
+  profileType: string | null;
+  url: string | null;
+}
+
+export interface SocialQuery_allDatoCmsSocialProfile_edges {
+  __typename: "DatoCmsSocialProfileEdge";
+  /**
+   * The item at the end of the edge
+   */
+  node: SocialQuery_allDatoCmsSocialProfile_edges_node | null;
+}
+
+export interface SocialQuery_allDatoCmsSocialProfile {
+  __typename: "DatoCmsSocialProfileConnection";
+  /**
+   * A list of edges.
+   */
+  edges: (SocialQuery_allDatoCmsSocialProfile_edges | null)[] | null;
+}
+
+export interface SocialQuery {
+  /**
+   * Connection to all DatoCmsSocialProfile nodes
+   */
+  allDatoCmsSocialProfile: SocialQuery_allDatoCmsSocialProfile | null;
 }
 
 /* tslint:disable */

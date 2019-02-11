@@ -5,16 +5,12 @@ import React, { Fragment, useContext } from 'react'
 import { NavigationQuery } from '../generated/graphql'
 import { css, ThemeProps } from '../styles'
 import { Idx } from '../utils'
-import { FilterTagsContext } from './filter-tags'
 import { PageType } from './layout'
 import { Link } from './link'
+import { Social } from './social'
+import { TagsContext } from './tags'
 
-export const navigationStyles = ({ theme }: ThemeProps) => css`
-  padding: ${theme.global.edgeSize.medium};
-  height: 100%;
-
-  justify-content: space-between;
-
+export const linkStyles = ({ theme }: ThemeProps) => css`
   .links,
   .tags {
     margin: ${theme.global.edgeSize.small} 0;
@@ -23,14 +19,10 @@ export const navigationStyles = ({ theme }: ThemeProps) => css`
       margin: ${theme.global.edgeSize.hair} 0;
     }
   }
-
-  aside {
-    align-self: end;
-  }
 `
 
 export const TagLinks: React.FC = () => {
-  const { allTags, setTagsFilter, tagsFilter } = useContext(FilterTagsContext)
+  const { allTags, setTagsFilter, tagsFilter } = useContext(TagsContext)
 
   const handleTagClick = (tag: string) => () => {
     if (tagsFilter.includes(tag)) {
@@ -47,7 +39,7 @@ export const TagLinks: React.FC = () => {
           key={tag}
           color={tagsFilter.includes(tag) ? 'brand' : 'black'}
           onClick={handleTagClick(tag)}
-          size="xxlarge"
+          size="xlarge"
         >
           {tag}
         </Link>
@@ -61,7 +53,7 @@ export interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
-  const { setTagsFilter } = useContext(FilterTagsContext)
+  const { setTagsFilter } = useContext(TagsContext)
 
   const handleEsc = () => {
     if (pageType !== PageType.Home) {
@@ -73,8 +65,8 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
 
   return (
     <Keyboard target="document" onEsc={handleEsc}>
-      <Box css={navigationStyles} className="navigation">
-        <div>
+      <Box justify="between" height="100vh" className="navigation">
+        <div css={linkStyles}>
           <code>Logo</code>
           <Box as="nav" className="links">
             <Link color="text" size="large" to="/">
@@ -90,13 +82,16 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
             </Box>
           )}
         </div>
-        <StaticQuery<Idx<NavigationQuery>> query={NAVIGATION_QUERY}>
-          {data => (
-            <aside>
-              <Text size="xsmall">{data.datoCmsHomePage.introText}</Text>
-            </aside>
-          )}
-        </StaticQuery>
+        <div>
+          <Social />
+          <StaticQuery<Idx<NavigationQuery>> query={NAVIGATION_QUERY}>
+            {data => (
+              <Box as="aside">
+                <Text size="xsmall">{data.datoCmsHomePage.introText}</Text>
+              </Box>
+            )}
+          </StaticQuery>
+        </div>
       </Box>
     </Keyboard>
   )
