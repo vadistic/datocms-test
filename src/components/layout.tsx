@@ -14,20 +14,21 @@ const layoutStyles = ({ theme: t }: ThemeProps) => css`
   .navigation {
     visibility: hidden;
     position: fixed;
-    padding: ${theme.global.edgeSize.large} ${theme.global.edgeSize.medium};
+    padding: ${t.global.edgeSize.large} ${t.global.edgeSize.medium};
   }
 
   main {
-    margin: ${theme.global.edgeSize.small};
+    margin: ${t.global.edgeSize.small};
+    min-height: 100vh;
   }
 
   footer {
-    padding: ${theme.global.edgeSize.large} 0;
+    padding: ${t.global.edgeSize.large} 0;
   }
 
   ${media.small(css`
     main {
-      margin: ${theme.global.edgeSize.large};
+      margin: ${t.global.edgeSize.large};
       margin-bottom: 0;
     }
   `)}
@@ -35,25 +36,25 @@ const layoutStyles = ({ theme: t }: ThemeProps) => css`
   ${media.medium(css`
     .navigation {
       visibility: visible;
-      width: ${theme.global.spacingValue * 10}px;
+      width: ${t.global.spacingValue * 10}px;
     }
 
     main {
-      margin-left: ${theme.global.spacingValue * 10}px;
-      margin-right: ${theme.global.spacingValue * 4}px;
+      margin-left: ${t.global.spacingValue * 10}px;
+      margin-right: ${t.global.spacingValue * 4}px;
     }
   `)}
 
   ${media.large(css`
     .navigation {
-      width: ${theme.global.spacingValue * 12}px;
+      width: ${t.global.spacingValue * 12}px;
     }
 
     main {
-      margin-top: ${theme.global.edgeSize.large};
+      margin-top: ${t.global.edgeSize.large};
 
-      margin-left: ${theme.global.spacingValue * 12}px;
-      margin-right: ${theme.global.spacingValue * 8}px;
+      margin-left: ${t.global.spacingValue * 12}px;
+      margin-right: ${t.global.spacingValue * 8}px;
     }
   `)}
 
