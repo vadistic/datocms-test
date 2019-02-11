@@ -19,6 +19,7 @@ const layoutStyles = ({ theme: t }: ThemeProps) => css`
 
   main {
     margin: ${theme.global.edgeSize.small};
+    min-height: 100vh;
   }
 
   footer {
