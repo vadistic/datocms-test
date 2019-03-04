@@ -6,6 +6,7 @@ import React, { useMemo, useRef, useState } from 'react'
 import { animated, config, useSpring, useTransition } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import { WorkQuery_datoCmsWork } from '../generated/graphql'
+import { useMedia } from '../styles'
 import { Idx, useSize } from '../utils'
 
 export interface LightboxProps {
@@ -18,6 +19,8 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const pending = useRef(false)
 
   const { height, width } = useSize(ref)
+  const isMobile = useMedia({ max: 'medium' })
+
   const [index, setIndex] = useState(0)
   const [fistRender, setFirstRender] = useState(true)
 
@@ -60,7 +63,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const [spring, setSpring] = useSpring(() => ({
     xy: [0, 0],
     blur: 0,
-    config: config.slow,
+    config: config.default,
   }))
 
   const bind = useGesture(({ down, delta: [deltaX, deltaY], distance, cancel, velocity }) => {
@@ -88,12 +91,11 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
       const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
       const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
 
-      console.log('velocity', velocity)
-      console.log('distanceX', distanceX)
-      console.log('maxXOverflow', maxXOverflow)
-
-      const distanceThreshold = distanceX > maxXOverflow + window.innerWidth / 3
-      const velocityThreshold = velocity > 4 && distanceX > maxXOverflow
+      const distanceThreshold =
+        distanceX > maxXOverflow + (isMobile ? window.innerWidth / 1.5 : window.innerWidth / 4)
+      const velocityThreshold = isMobile
+        ? velocity > 4
+        : velocity > 6 || (velocity > 4 && distanceX > maxXOverflow)
 
       if (down && cancel && images.length > 1 && (distanceThreshold || velocityThreshold)) {
         pending.current = true
@@ -133,14 +135,17 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
           }
     }
 
+    // prevent flashing on some random render
     return {
-      height: '100%',
-      width: '100%',
+      display: 'none',
     }
   }
 
   return (
     <div
+      onKeyDown={handleKeyboard}
+      tabIndex={0}
+      ref={ref}
       css={{
         position: 'relative',
         width: '100%',
@@ -151,9 +156,6 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
         // disable mobile pull to refresh
         touchAction: 'none',
       }}
-      onKeyDown={handleKeyboard}
-      tabIndex={0}
-      ref={ref}
     >
       {images.length > 1 && <LightboxControls handlePrev={handlePrev} handleNext={handleNext} />}
 
