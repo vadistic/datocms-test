@@ -22,12 +22,16 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
 
   const [index, setIndex] = useState(0)
 
+  const getNextIndex = (i: number) => (i + 1) % images.length
+
+  const getPrevIndex = (i: number) => ((i || images.length) - 1) % images.length
+
   const handleNext = () => {
-    setIndex(_index => (_index + 1) % images.length)
+    setIndex(i => getNextIndex(i))
   }
 
   const handlePrev = () => {
-    setIndex(_index => ((_index || images.length) - 1) % images.length)
+    setIndex(i => getPrevIndex(i))
   }
 
   const [fistRender, setFirstRender] = useState(true)
@@ -148,6 +152,9 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
           >
             {images.length > 1 && renderControls()}
             <Img fluid={item} />
+            {/* preload */}
+            <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} />
+            <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} />
           </div>
         </animated.div>
       ))}
