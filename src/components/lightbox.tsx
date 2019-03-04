@@ -15,6 +15,7 @@ export interface LightboxProps {
 
 export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const ref = useRef<HTMLDivElement>(null)
+  const pending = useRef(false)
 
   const { height, width } = useSize(ref)
   const [index, setIndex] = useState(0)
@@ -45,7 +46,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
 
   // hacky, but nvm
   // the issue is that I want to have opacity enter animation after update
-  // there are ranges, and aysn fn, but typings are faulty so this is the quickiest
+  // there are ranges, and async fn, but...
   useMemo(() => {
     setFirstRender(false)
   }, [])
@@ -62,37 +63,44 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
     config: config.slow,
   }))
 
-  const bind = useGesture(({ down, delta: [deltaX, deltaY], cancel }) => {
+  const bind = useGesture(({ down, delta: [deltaX, deltaY], distance, cancel, xy }) => {
     const distanceX = Math.abs(deltaX)
 
+    if (distance < 5) {
+      pending.current = false
+    }
+
     if (images.length > 1 && down && distanceX > window.innerWidth / 3 && cancel) {
+      pending.current = true
       cancel()
 
       deltaX < 0 ? handleNext() : handlePrev()
-    }
+    } else {
+      if (ref.current) {
+        const { clientWidth, clientHeight } = ref.current
 
-    if (ref.current) {
-      const { clientWidth, clientHeight } = ref.current
+        const viewboxRatio = clientWidth / clientHeight
 
-      const viewboxRatio = clientWidth / clientHeight
+        const maxXOverflow =
+          currentImage.aspectRatio >= viewboxRatio
+            ? (currentImage.aspectRatio * clientHeight - clientWidth) / 2
+            : 0
 
-      const maxXOverflow =
-        currentImage.aspectRatio >= viewboxRatio
-          ? (currentImage.aspectRatio * clientHeight - clientWidth) / 2
-          : 0
+        const maxYOverflow =
+          currentImage.aspectRatio <= viewboxRatio
+            ? (clientWidth / currentImage.aspectRatio - clientHeight) / 2
+            : 0
 
-      const maxYOverflow =
-        currentImage.aspectRatio <= viewboxRatio
-          ? (clientWidth / currentImage.aspectRatio - clientHeight) / 2
-          : 0
+        const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
+        const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
 
-      const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
-      const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
+        console.log('will be set', pending.current)
 
-      setSpring({
-        xy: down ? [deltaX, deltaY] : [deltaXClamp, deltaYClamp],
-        blur: down && distanceX > window.innerWidth / 5 ? distanceX / 100 : 0,
-      })
+        setSpring({
+          xy: down ? [deltaX, deltaY] : pending.current ? [0, 0] : [deltaXClamp, deltaYClamp],
+          blur: down && distanceX > window.innerWidth / 5 ? distanceX / 100 : 0,
+        })
+      }
     }
   })
 
@@ -104,8 +112,6 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
       handlePrev()
     }
   }
-
-  console.log(width, height)
 
   const getSize = (item: typeof images[number]) => {
     if (width && height) {
