@@ -1,15 +1,12 @@
 import Img from 'gatsby-image'
 import { Button } from 'grommet'
+import { Next, Previous } from 'grommet-icons'
+import clamp from 'lodash-es/clamp'
 import React, { useMemo, useRef, useState } from 'react'
 import { animated, config, useSpring, useTransition } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import { WorkQuery_datoCmsWork } from '../generated/graphql'
-import { Idx } from '../utils'
-
-import { Next, Previous } from 'grommet-icons'
-
-// theres and issue with typings for react spring
-// https://github.com/react-spring/react-spring/issues/571
+import { Idx, useSize } from '../utils'
 
 export interface LightboxProps {
   cover: Idx<WorkQuery_datoCmsWork['coverImage']>
@@ -18,23 +15,23 @@ export interface LightboxProps {
 
 export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const images = [cover, ...gallery].map(img => img.fluid)
 
+  const { height, width } = useSize(ref)
   const [index, setIndex] = useState(0)
+  const [fistRender, setFirstRender] = useState(true)
+
+  const images = [cover, ...gallery].map(img => img.fluid)
+  const currentImage = images[index]
 
   const getNextIndex = (i: number) => (i + 1) % images.length
-
   const getPrevIndex = (i: number) => ((i || images.length) - 1) % images.length
 
   const handleNext = () => {
     setIndex(i => getNextIndex(i))
   }
-
   const handlePrev = () => {
     setIndex(i => getPrevIndex(i))
   }
-
-  const [fistRender, setFirstRender] = useState(true)
 
   const transitions = useTransition(images[index], image => image.src, {
     from: { opacity: 0 },
@@ -47,7 +44,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   })
 
   // hacky, but nvm
-  // the issue is that I want enter animation after update
+  // the issue is that I want to have opacity enter animation after update
   // there are ranges, and aysn fn, but typings are faulty so this is the quickiest
   useMemo(() => {
     setFirstRender(false)
@@ -60,23 +57,43 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   // )
 
   const [spring, setSpring] = useSpring(() => ({
-    x: 0,
-    config: config.wobbly,
+    xy: [0, 0],
+    blur: 0,
+    config: config.slow,
   }))
 
-  const bind = useGesture(({ down, delta: [deltaX], distance, cancel }) => {
-    if (down && distance > window.innerWidth / 3 && cancel) {
-      setSpring({
-        x: 2 * deltaX,
-      })
+  const bind = useGesture(({ down, delta: [deltaX, deltaY], cancel }) => {
+    const distanceX = Math.abs(deltaX)
+
+    if (images.length > 1 && down && distanceX > window.innerWidth / 3 && cancel) {
       cancel()
 
       deltaX < 0 ? handleNext() : handlePrev()
     }
 
-    setSpring({
-      x: down ? deltaX : 0,
-    })
+    if (ref.current) {
+      const { clientWidth, clientHeight } = ref.current
+
+      const viewboxRatio = clientWidth / clientHeight
+
+      const maxXOverflow =
+        currentImage.aspectRatio >= viewboxRatio
+          ? (currentImage.aspectRatio * clientHeight - clientWidth) / 2
+          : 0
+
+      const maxYOverflow =
+        currentImage.aspectRatio <= viewboxRatio
+          ? (clientWidth / currentImage.aspectRatio - clientHeight) / 2
+          : 0
+
+      const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
+      const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
+
+      setSpring({
+        xy: down ? [deltaX, deltaY] : [deltaXClamp, deltaYClamp],
+        blur: down && distanceX > window.innerWidth / 5 ? distanceX / 100 : 0,
+      })
+    }
   })
 
   const handleKeyboard: React.KeyboardEventHandler = e => {
@@ -88,7 +105,101 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
     }
   }
 
-  const renderControls = () => (
+  console.log(width, height)
+
+  const getSize = (item: typeof images[number]) => {
+    if (width && height) {
+      const viewboxRatio = width / height
+
+      return viewboxRatio >= item.aspectRatio
+        ? {
+            width: '100%',
+            height: 'unset',
+          }
+        : {
+            width: 'unset',
+            height: '100%',
+          }
+    }
+
+    return {
+      height: '100%',
+      width: '100%',
+    }
+  }
+
+  return (
+    <div
+      css={{
+        position: 'relative',
+        width: '100%',
+        height: '70vh',
+        overflow: 'hidden',
+        // TODO: fix outline (it's ugly?)
+        '&:focus': { outline: 'none' },
+        // disable mobile pull to refresh
+        touchAction: 'none',
+      }}
+      onKeyDown={handleKeyboard}
+      tabIndex={0}
+      ref={ref}
+    >
+      {images.length > 1 && <LightboxControls handlePrev={handlePrev} handleNext={handleNext} />}
+
+      {transitions.map(({ item, props, key, state }) => (
+        <animated.div
+          {...bind()}
+          key={key}
+          style={{
+            ...props,
+            willChange: 'transform',
+            userSelect: 'none',
+            height: '100%',
+            width: '100%',
+            cursor: 'move',
+
+            // theres and issue with typings for react spring
+            // https://github.com/react-spring/react-spring/issues/571
+            transform: spring.xy.interpolate(((_x: number, _y: number) =>
+              `translate3d(${_x}px, ${_y}px, 0)`) as any),
+            filter: spring.blur.interpolate(val => `blur(${val}px)`),
+          }}
+          /* trying to minimize issues when cursor interacts with other elements durging drag */
+          onDragStart={e => {
+            e.preventDefault()
+          }}
+          onClick={e => {
+            e.preventDefault()
+          }}
+        >
+          <picture
+            css={{
+              display: 'flex',
+              height: '100%',
+              width: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <source srcSet={item.srcSet} sizes={item.sizes} />
+            <img src={item.src} css={{ ...getSize(item) }} />
+          </picture>
+          {/* preload */}
+          <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} />
+          <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} />
+        </animated.div>
+      ))}
+    </div>
+  )
+}
+
+interface LightboxControlsProps {
+  handlePrev: () => void
+  handleNext: () => void
+}
+
+const LightboxControls: React.FC<LightboxControlsProps> = ({ handleNext, handlePrev }) => {
+  return (
     <>
       <Button
         reverse
@@ -102,7 +213,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
           cursor: 'pointer',
         }}
         onClick={handlePrev}
-        icon={<Previous color={'white' as any} />}
+        icon={<Previous color="white" />}
       />
 
       <Button
@@ -117,47 +228,8 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
           cursor: 'pointer',
         }}
         onClick={handleNext}
-        icon={<Next color={'white' as any} />}
+        icon={<Next color="white" />}
       />
     </>
-  )
-
-  return (
-    <div
-      css={{ position: 'relative', '&:focus': { outline: 'none' } }}
-      onKeyDown={handleKeyboard}
-      tabIndex={0}
-      ref={ref}
-    >
-      {transitions.map(({ item, props, key, state }) => (
-        <animated.div
-          {...bind()}
-          key={key}
-          style={{
-            ...props,
-            willChange: 'transform',
-            userSelect: 'none',
-            cursor: 'move',
-            transform: spring.x.interpolate(val => `translate3d(${val}px, 0, 0)`),
-          }}
-        >
-          <div
-            onDragStart={e => {
-              e.preventDefault()
-            }}
-            css={{
-              // prevents jumps on image loads
-              height: ref.current && state === 'leave' ? 0 : 'inherit',
-            }}
-          >
-            {images.length > 1 && renderControls()}
-            <Img fluid={item} />
-            {/* preload */}
-            <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} />
-            <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} />
-          </div>
-        </animated.div>
-      ))}
-    </div>
   )
 }

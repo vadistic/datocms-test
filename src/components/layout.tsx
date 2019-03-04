@@ -11,6 +11,8 @@ const layoutStyles = ({ theme: t }: ThemeProps) => css`
   flex-direction: column;
   position: relative;
 
+  overflow: hidden;
+
   .navigation {
     visibility: hidden;
     position: fixed;

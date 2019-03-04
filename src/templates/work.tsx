@@ -43,12 +43,13 @@ export const WORK_TEMPLATE_QUERY = graphql`
       }
 
       coverImage {
-        fluid(maxWidth: 2000, maxHeight: 1600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 2000, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid
         }
       }
+
       gallery {
-        fluid(maxWidth: 2000, maxHeight: 1600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 2000, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid
         }
       }
