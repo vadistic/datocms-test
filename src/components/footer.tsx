@@ -1,5 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby'
-import { Box, Text } from 'grommet'
+import { Box } from 'grommet'
 import { Paragraph } from 'grommet/components/Paragraph'
 import React from 'react'
 import { FooterQuery } from '../generated/graphql'

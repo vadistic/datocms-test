@@ -24,6 +24,6 @@
     ]
   },
   "linterOptions": {
-    "exclude": ["src/generated/**", "node_modules/**"]
+    "exclude": ["**/generated/**", "**/node_modules/**"]
   }
 }
