@@ -1,6 +1,6 @@
 import { graphql, navigate } from 'gatsby'
 import { StaticQuery } from 'gatsby'
-import { Box, Keyboard, Text } from 'grommet'
+import { Box, Text } from 'grommet'
 import React, { Fragment, useContext } from 'react'
 import { NavigationQuery } from '../generated/graphql'
 import { css, ThemeProps } from '../styles'
@@ -55,45 +55,51 @@ export interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
   const { setTagsFilter } = useContext(TagsContext)
 
-  const handleEsc = () => {
-    if (pageType !== PageType.Home) {
-      navigate('/')
-    } else {
-      setTagsFilter([])
+  const handleKeyboard: React.KeyboardEventHandler = e => {
+    if (e.key === 'Escape') {
+      if (pageType !== PageType.Home) {
+        navigate('/')
+      } else {
+        setTagsFilter([])
+      }
     }
   }
 
   return (
-    <Keyboard target="document" onEsc={handleEsc}>
-      <Box justify="between" height="100vh" className="navigation">
-        <div css={linkStyles}>
-          <code>Logo</code>
-          <Box as="nav" className="links">
-            <Link color="text" size="large" to="/">
-              home
-            </Link>
-            <Link color="text" size="large" to="/about">
-              about
-            </Link>
+    <Box
+      justify="between"
+      height="100vh"
+      className="navigation"
+      onKeyDown={handleKeyboard}
+      tabIndex={0}
+    >
+      <div css={linkStyles}>
+        <code>Logo</code>
+        <Box as="nav" className="links">
+          <Link color="text" size="large" to="/">
+            home
+          </Link>
+          <Link color="text" size="large" to="/about">
+            about
+          </Link>
+        </Box>
+        {pageType === PageType.Home && (
+          <Box className="tags">
+            <TagLinks />
           </Box>
-          {pageType === PageType.Home && (
-            <Box className="tags">
-              <TagLinks />
+        )}
+      </div>
+      <div>
+        <Social />
+        <StaticQuery<Idx<NavigationQuery>> query={NAVIGATION_QUERY}>
+          {data => (
+            <Box as="aside">
+              <Text size="xsmall">{data.datoCmsHomePage.introText}</Text>
             </Box>
           )}
-        </div>
-        <div>
-          <Social />
-          <StaticQuery<Idx<NavigationQuery>> query={NAVIGATION_QUERY}>
-            {data => (
-              <Box as="aside">
-                <Text size="xsmall">{data.datoCmsHomePage.introText}</Text>
-              </Box>
-            )}
-          </StaticQuery>
-        </div>
-      </Box>
-    </Keyboard>
+        </StaticQuery>
+      </div>
+    </Box>
   )
 }
 
