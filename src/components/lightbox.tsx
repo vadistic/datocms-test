@@ -63,44 +63,49 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
     config: config.slow,
   }))
 
-  const bind = useGesture(({ down, delta: [deltaX, deltaY], distance, cancel, xy }) => {
+  const bind = useGesture(({ down, delta: [deltaX, deltaY], distance, cancel, velocity }) => {
     const distanceX = Math.abs(deltaX)
 
     if (distance < 5) {
       pending.current = false
     }
 
-    if (images.length > 1 && down && distanceX > window.innerWidth / 3 && cancel) {
-      pending.current = true
-      cancel()
+    if (ref.current) {
+      const { clientWidth, clientHeight } = ref.current
 
-      deltaX < 0 ? handleNext() : handlePrev()
-    } else {
-      if (ref.current) {
-        const { clientWidth, clientHeight } = ref.current
+      const viewboxRatio = clientWidth / clientHeight
 
-        const viewboxRatio = clientWidth / clientHeight
+      const maxXOverflow =
+        currentImage.aspectRatio >= viewboxRatio
+          ? (currentImage.aspectRatio * clientHeight - clientWidth) / 2
+          : 0
 
-        const maxXOverflow =
-          currentImage.aspectRatio >= viewboxRatio
-            ? (currentImage.aspectRatio * clientHeight - clientWidth) / 2
-            : 0
+      const maxYOverflow =
+        currentImage.aspectRatio <= viewboxRatio
+          ? (clientWidth / currentImage.aspectRatio - clientHeight) / 2
+          : 0
 
-        const maxYOverflow =
-          currentImage.aspectRatio <= viewboxRatio
-            ? (clientWidth / currentImage.aspectRatio - clientHeight) / 2
-            : 0
+      const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
+      const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
 
-        const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
-        const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
+      console.log('velocity', velocity)
+      console.log('distanceX', distanceX)
+      console.log('maxXOverflow', maxXOverflow)
 
-        console.log('will be set', pending.current)
+      const distanceThreshold = distanceX > maxXOverflow + window.innerWidth / 3
+      const velocityThreshold = velocity > 4 && distanceX > maxXOverflow
 
-        setSpring({
-          xy: down ? [deltaX, deltaY] : pending.current ? [0, 0] : [deltaXClamp, deltaYClamp],
-          blur: down && distanceX > window.innerWidth / 5 ? distanceX / 100 : 0,
-        })
+      if (down && cancel && images.length > 1 && (distanceThreshold || velocityThreshold)) {
+        pending.current = true
+        cancel()
+
+        deltaX < 0 ? handleNext() : handlePrev()
       }
+
+      setSpring({
+        xy: down ? [deltaX, deltaY] : pending.current ? [0, 0] : [deltaXClamp, deltaYClamp],
+        blur: down && distanceX > window.innerWidth / 6 ? distanceX / 100 : 0,
+      })
     }
   })
 
@@ -120,10 +125,10 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
       return viewboxRatio >= item.aspectRatio
         ? {
             width: '100%',
-            height: 'unset',
+            height: width / currentImage.aspectRatio,
           }
         : {
-            width: 'unset',
+            width: currentImage.aspectRatio * height,
             height: '100%',
           }
     }
@@ -163,7 +168,9 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
             height: '100%',
             width: '100%',
             cursor: 'move',
-
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             // theres and issue with typings for react spring
             // https://github.com/react-spring/react-spring/issues/571
             transform: spring.xy.interpolate(((_x: number, _y: number) =>
@@ -180,11 +187,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
         >
           <picture
             css={{
-              display: 'flex',
-              height: '100%',
-              width: '100%',
-              justifyContent: 'center',
-              alignItems: 'center',
+              ...getSize(item),
             }}
           >
             <source srcSet={item.srcSet} sizes={item.sizes} />
