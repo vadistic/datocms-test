@@ -10,7 +10,7 @@ const WorkTemplate: React.FC<IdxData<WorkQuery>> = ({ data }) => {
   return (
     <Layout pageType={PageType.Work}>
       <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
-      <Lightbox cover={data.datoCmsWork.coverImage} />
+      <Lightbox cover={data.datoCmsWork.coverImage} gallery={data.datoCmsWork.gallery} />
       <Box as="article" margin={{ horizontal: 'large' }}>
         <Box margin={{ vertical: 'large' }}>
           <Heading size="large">{data.datoCmsWork.title}</Heading>

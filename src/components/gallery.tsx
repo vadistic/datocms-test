@@ -35,7 +35,7 @@ const imageComponentStyles = ({ theme }: ThemeProps) => css`
     visibility: hidden;
     opacity: 0.001;
 
-    margin: ${theme.global.edgeSize.small};
+    margin: ${theme.global.edgeSize.medium};
   }
 
   &:hover {
@@ -87,6 +87,11 @@ const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
     imgStyle.cursor = 'pointer'
   }
 
+  const MAX_CHARS = 200
+
+  const trimChars = (text: string) =>
+    text.length <= MAX_CHARS ? text : text.slice(0, MAX_CHARS).replace(/[^\s]+$/, ' ') + '...'
+
   return (
     <Box
       style={imgStyle}
@@ -98,7 +103,7 @@ const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
     >
       <Box as="figcaption" className="figcaption">
         <Heading level="4">{photo.node.title}</Heading>
-        <Text size="xsmall">{photo.node.excerpt}</Text>
+        <Text size="xsmall">{trimChars(photo.node.excerpt)}</Text>
       </Box>
       <Img fluid={photo} />
     </Box>
