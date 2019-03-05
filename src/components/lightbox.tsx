@@ -115,7 +115,10 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
 
       setSpring({
         xy: down ? [deltaX, deltaY] : pending.current ? [0, 0] : [deltaXClamp, deltaYClamp],
-        blur: down && distanceX > window.innerWidth / 6 ? distanceX / 100 : 0,
+        blur:
+          down && distanceX - maxXOverflow > window.innerWidth / 6
+            ? distanceX - maxXOverflow / 100
+            : 0,
       })
     }
   })
@@ -185,10 +188,15 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
             fluid={item}
             style={{
               overflow: 'visible',
+              // width && heigth trying to prevent resize flash when no observer values
               minWidth:
-                Math.max(1, (currentImage.aspectRatio * (height || 0)) / (width || 1)) * 100 + '%',
+                width && height
+                  ? Math.max(1, (currentImage.aspectRatio * height) / width) * 100 + '%'
+                  : 0,
               minHeight:
-                Math.max(1, (width || 0) / (currentImage.aspectRatio * (height || 1))) * 100 + '%',
+                width && height
+                  ? Math.max(1, width / (currentImage.aspectRatio * height)) * 100 + '%'
+                  : 0,
             }}
           />
           {/* preload */}
