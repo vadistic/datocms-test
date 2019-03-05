@@ -1139,12 +1139,6 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/grommet-icons@vadistic/types#types-grommet-icons-v4.1.0-2-gitpkg":
-  version "4.1.0-2"
-  resolved "https://codeload.github.com/vadistic/types/tar.gz/eb7c2238a854e9bed3b16065a865f3f6cc42bf69"
-  dependencies:
-    types-util vadistic/types#types-util-v0.1.2-gitpkg
-
 "@types/history@*":
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
@@ -5304,13 +5298,6 @@ gatsby-link@^2.0.13:
     "@reach/router" "^1.1.1"
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
-
-gatsby-plugin-layout@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.0.12.tgz#dc57e58b6d0f57a24fc86eafa07fa15a04c0516e"
-  integrity sha512-RNppwUiuQ8HT66sA4K+LXTVn4058qRn3Cscte7/mW0/pd5+w6M2lG4RZGIttvy8CKTizMjcwrir73hVzPM5bRA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
 
 gatsby-plugin-page-creator@^2.0.8:
   version "2.0.8"
@@ -11743,10 +11730,6 @@ typeface-noto-serif@^0.0.72:
   version "0.0.72"
   resolved "https://registry.yarnpkg.com/typeface-noto-serif/-/typeface-noto-serif-0.0.72.tgz#798e917662322443cec944ac68e2ebd42c2dd2ec"
   integrity sha512-mhdlDJQF04V50+/mHwiOR+cVV9jl1ITpZhNMnaQF6CqgzS0ujR3+9Alme3OtT1iZd1kp2iM1VxLtzLKhR0Bh3Q==
-
-types-util@vadistic/types#types-util-v0.1.2-gitpkg:
-  version "0.1.2"
-  resolved "https://codeload.github.com/vadistic/types/tar.gz/44b5cbd8e3a2752e588676063e8b491791ac0b3e"
 
 typescript@^3.3.3333:
   version "3.3.3333"

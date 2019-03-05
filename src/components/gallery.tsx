@@ -9,7 +9,7 @@ import _PhotoGallery, {
 } from 'react-photo-gallery'
 import { GatsbyDatoCmsFluid, IndexPageQuery } from '../generated/graphql'
 import { css, ThemeProps } from '../styles'
-import { Idx } from '../utils'
+import { fixAspectRatio, Idx } from '../utils'
 
 type CustomPhotoProps = Idx<GatsbyDatoCmsFluid> & {
   node: Idx<IndexPageQuery>['allDatoCmsWork']['edges'][number]['node']
@@ -108,36 +108,6 @@ const ImageComponent: React.FC<ImageComponentProps<CustomPhotoProps>> = ({
       <Img fluid={photo} />
     </Box>
   )
-}
-
-const fixAspectRatio = (aspectRatio: number) => {
-  // calculate images length as fraction of width in 0.25 increments
-  // co columns layout edges won't have misaligments
-  const ratioValues = [4, 2, 4 / 3, 1, 4 / 5, 2 / 3, 4 / 7, 1 / 2]
-
-  // very wide
-  if (aspectRatio > ratioValues[0]) {
-    return ratioValues[0]
-  }
-
-  // very high
-  if (aspectRatio < ratioValues[ratioValues.length - 1]) {
-    return ratioValues[ratioValues.length - 1]
-  }
-
-  let result = 0
-
-  ratioValues.forEach((val, i) => {
-    const current = val
-    const next = ratioValues[i + 1]
-
-    if (aspectRatio <= current && aspectRatio > next) {
-      // calculate distance
-      result = current - aspectRatio <= aspectRatio - next ? current : next
-    }
-  })
-
-  return result
 }
 
 interface GalleryProps {

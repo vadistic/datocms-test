@@ -1,15 +1,12 @@
 import Img from 'gatsby-image'
 import { Button } from 'grommet'
+import { Next, Previous } from 'grommet-icons'
+import clamp from 'lodash-es/clamp'
 import React, { useMemo, useRef, useState } from 'react'
 import { animated, config, useSpring, useTransition } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import { WorkQuery_datoCmsWork } from '../generated/graphql'
-import { Idx } from '../utils'
-
-import { Next, Previous } from 'grommet-icons'
-
-// theres and issue with typings for react spring
-// https://github.com/react-spring/react-spring/issues/571
+import { Idx, useSize } from '../utils'
 
 export interface LightboxProps {
   cover: Idx<WorkQuery_datoCmsWork['coverImage']>
@@ -18,25 +15,26 @@ export interface LightboxProps {
 
 export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const images = [cover, ...gallery].map(img => img.fluid)
+  const pending = useRef(false)
+  const { height, width } = useSize(ref)
 
   const [index, setIndex] = useState(0)
+  const [fistRender, setFirstRender] = useState(true)
+
+  const images = [cover, ...gallery].map(img => img.fluid)
+  const currentImage = images[index]
 
   const getNextIndex = (i: number) => (i + 1) % images.length
-
   const getPrevIndex = (i: number) => ((i || images.length) - 1) % images.length
 
   const handleNext = () => {
     setIndex(i => getNextIndex(i))
   }
-
   const handlePrev = () => {
     setIndex(i => getPrevIndex(i))
   }
 
-  const [fistRender, setFirstRender] = useState(true)
-
-  const transitions = useTransition(images[index], image => image.src, {
+  const transitions = useTransition(currentImage, image => image.src, {
     from: { opacity: 0 },
     enter: { opacity: fistRender ? 1 : 0 },
     update: { opacity: 1 },
@@ -47,8 +45,8 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   })
 
   // hacky, but nvm
-  // the issue is that I want enter animation after update
-  // there are ranges, and aysn fn, but typings are faulty so this is the quickiest
+  // the issue is that I want to have opacity enter animation after update
+  // there are ranges, and async fn, but...
   useMemo(() => {
     setFirstRender(false)
   }, [])
@@ -60,24 +58,74 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   // )
 
   const [spring, setSpring] = useSpring(() => ({
-    x: 0,
-    config: config.wobbly,
+    xy: [0, 0],
+    blur: 0,
+    config: config.default,
   }))
 
-  const bind = useGesture(({ down, delta: [deltaX], distance, cancel }) => {
-    if (down && distance > window.innerWidth / 3 && cancel) {
-      setSpring({
-        x: 2 * deltaX,
-      })
-      cancel()
+  // temp var to calculate directional velocity
+  let previous: {
+    time: number
+    deltaX: number
+  }
 
-      deltaX < 0 ? handleNext() : handlePrev()
+  const bind = useGesture(({ down, delta: [deltaX, deltaY], distance, cancel, velocity, time }) => {
+    const distanceX = Math.abs(deltaX)
+
+    if (distance < 5) {
+      pending.current = false
     }
 
-    setSpring({
-      x: down ? deltaX : 0,
-    })
+    const velocityX = previous
+      ? Math.abs(deltaX - previous.deltaX) / (time - previous.time || 1)
+      : 0
+
+    previous = {
+      time,
+      deltaX,
+    }
+
+    if (ref.current) {
+      const { clientWidth, clientHeight } = ref.current
+
+      const viewboxRatio = clientWidth / clientHeight
+
+      const maxXOverflow =
+        currentImage.aspectRatio >= viewboxRatio
+          ? (currentImage.aspectRatio * clientHeight - clientWidth) / 2
+          : 0
+
+      const maxYOverflow =
+        currentImage.aspectRatio <= viewboxRatio
+          ? (clientWidth / currentImage.aspectRatio - clientHeight) / 2
+          : 0
+
+      const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
+      const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
+
+      // magic formula?
+      const shouldSwipe = velocityX > clientWidth / 200
+
+      if (down && cancel && images.length > 1 && shouldSwipe) {
+        pending.current = true
+        cancel()
+
+        deltaX < 0 ? handleNext() : handlePrev()
+      }
+
+      setSpring({
+        xy: down ? [deltaX, deltaY] : pending.current ? [0, 0] : [deltaXClamp, deltaYClamp],
+        blur: down && distanceX > window.innerWidth / 6 ? distanceX / 100 : 0,
+      })
+    }
   })
+
+  useMemo(() => {
+    setSpring({
+      xy: [0, 0],
+      blur: 0,
+    })
+  }, [index])
 
   const handleKeyboard: React.KeyboardEventHandler = e => {
     if (e.key === 'ArrowRight') {
@@ -88,7 +136,77 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
     }
   }
 
-  const renderControls = () => (
+  return (
+    <div
+      onKeyDown={handleKeyboard}
+      tabIndex={0}
+      ref={ref}
+      css={{
+        position: 'relative',
+        width: '100%',
+        height: '70vh',
+        overflow: 'hidden',
+        '&:focus': { outline: 'none' },
+        // disable mobile pull to refresh
+        // touchAction: 'none',
+      }}
+    >
+      {images.length > 1 && <LightboxControls handlePrev={handlePrev} handleNext={handleNext} />}
+
+      {transitions.map(({ item, props, key }) => (
+        <animated.div
+          {...bind()}
+          key={key}
+          style={{
+            ...props,
+            willChange: 'transform',
+            userSelect: 'none',
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            cursor: 'move',
+            // theres and issue with typings for react spring
+            // https://github.com/react-spring/react-spring/issues/571
+            transform: spring.xy.interpolate(((_x: number, _y: number) =>
+              `translate3d(${_x}px, ${_y}px, 0)`) as any),
+            filter: spring.blur.interpolate(val => `blur(${val}px)`),
+          }}
+          /* trying to minimize issues when cursor interacts with other elements durging drag */
+          onDragStart={e => {
+            e.preventDefault()
+          }}
+          onClick={e => {
+            e.preventDefault()
+          }}
+        >
+          <Img
+            fluid={item}
+            style={{
+              overflow: 'visible',
+              minWidth:
+                Math.max(1, (currentImage.aspectRatio * (height || 0)) / (width || 1)) * 100 + '%',
+              minHeight:
+                Math.max(1, (width || 0) / (currentImage.aspectRatio * (height || 1))) * 100 + '%',
+            }}
+          />
+          {/* preload */}
+          <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} />
+          <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} />
+        </animated.div>
+      ))}
+    </div>
+  )
+}
+
+interface LightboxControlsProps {
+  handlePrev: () => void
+  handleNext: () => void
+}
+
+const LightboxControls: React.FC<LightboxControlsProps> = ({ handleNext, handlePrev }) => {
+  return (
     <>
       <Button
         reverse
@@ -102,7 +220,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
           cursor: 'pointer',
         }}
         onClick={handlePrev}
-        icon={<Previous color={'white' as any} />}
+        icon={<Previous color="white" />}
       />
 
       <Button
@@ -117,47 +235,8 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
           cursor: 'pointer',
         }}
         onClick={handleNext}
-        icon={<Next color={'white' as any} />}
+        icon={<Next color="white" />}
       />
     </>
-  )
-
-  return (
-    <div
-      css={{ position: 'relative', '&:focus': { outline: 'none' } }}
-      onKeyDown={handleKeyboard}
-      tabIndex={0}
-      ref={ref}
-    >
-      {transitions.map(({ item, props, key, state }) => (
-        <animated.div
-          {...bind()}
-          key={key}
-          style={{
-            ...props,
-            willChange: 'transform',
-            userSelect: 'none',
-            cursor: 'move',
-            transform: spring.x.interpolate(val => `translate3d(${val}px, 0, 0)`),
-          }}
-        >
-          <div
-            onDragStart={e => {
-              e.preventDefault()
-            }}
-            css={{
-              // prevents jumps on image loads
-              height: ref.current && state === 'leave' ? 0 : 'inherit',
-            }}
-          >
-            {images.length > 1 && renderControls()}
-            <Img fluid={item} />
-            {/* preload */}
-            <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} />
-            <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} />
-          </div>
-        </animated.div>
-      ))}
-    </div>
   )
 }
