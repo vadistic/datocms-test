@@ -6,8 +6,7 @@ import React, { useMemo, useRef, useState } from 'react'
 import { animated, config, useSpring, useTransition } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import { WorkQuery_datoCmsWork } from '../generated/graphql'
-import { useMedia } from '../styles'
-import { Idx, useSize } from '../utils'
+import { Idx } from '../utils'
 
 export interface LightboxProps {
   cover: Idx<WorkQuery_datoCmsWork['coverImage']>
@@ -16,10 +15,8 @@ export interface LightboxProps {
 
 export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const ref = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLImageElement>(null)
   const pending = useRef(false)
-
-  const { height, width } = useSize(ref)
-  const isMobile = useMedia({ max: 'medium' })
 
   const [index, setIndex] = useState(0)
   const [fistRender, setFirstRender] = useState(true)
@@ -37,7 +34,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
     setIndex(i => getPrevIndex(i))
   }
 
-  const transitions = useTransition(images[index], image => image.src, {
+  const transitions = useTransition(currentImage, image => image.src, {
     from: { opacity: 0 },
     enter: { opacity: fistRender ? 1 : 0 },
     update: { opacity: 1 },
@@ -91,13 +88,10 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
       const deltaXClamp = clamp(deltaX, -maxXOverflow, +maxXOverflow)
       const deltaYClamp = clamp(deltaY, -maxYOverflow, +maxYOverflow)
 
-      const distanceThreshold =
-        distanceX > maxXOverflow + (isMobile ? window.innerWidth / 1.5 : window.innerWidth / 4)
-      const velocityThreshold = isMobile
-        ? velocity > 4
-        : velocity > 6 || (velocity > 4 && distanceX > maxXOverflow)
+      // magic formula?
+      const swipeTreshold = velocity > clientWidth / 200
 
-      if (down && cancel && images.length > 1 && (distanceThreshold || velocityThreshold)) {
+      if (down && cancel && images.length > 1 && swipeTreshold) {
         pending.current = true
         cancel()
 
@@ -111,33 +105,19 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
     }
   })
 
+  useMemo(() => {
+    setSpring({
+      xy: [0, 0],
+      blur: 0,
+    })
+  }, [index])
+
   const handleKeyboard: React.KeyboardEventHandler = e => {
     if (e.key === 'ArrowRight') {
       handleNext()
     }
     if (e.key === 'ArrowLeft') {
       handlePrev()
-    }
-  }
-
-  const getSize = (item: typeof images[number]) => {
-    if (width && height) {
-      const viewboxRatio = width / height
-
-      return viewboxRatio >= item.aspectRatio
-        ? {
-            width: '100%',
-            height: width / currentImage.aspectRatio,
-          }
-        : {
-            width: currentImage.aspectRatio * height,
-            height: '100%',
-          }
-    }
-
-    // prevent flashing on some random render
-    return {
-      display: 'none',
     }
   }
 
@@ -151,10 +131,9 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
         width: '100%',
         height: '70vh',
         overflow: 'hidden',
-        // TODO: fix outline (it's ugly?)
         '&:focus': { outline: 'none' },
         // disable mobile pull to refresh
-        touchAction: 'none',
+        // touchAction: 'none',
       }}
     >
       {images.length > 1 && <LightboxControls handlePrev={handlePrev} handleNext={handleNext} />}
@@ -169,10 +148,10 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
             userSelect: 'none',
             height: '100%',
             width: '100%',
-            cursor: 'move',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            cursor: 'move',
             // theres and issue with typings for react spring
             // https://github.com/react-spring/react-spring/issues/571
             transform: spring.xy.interpolate(((_x: number, _y: number) =>
@@ -187,14 +166,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
             e.preventDefault()
           }}
         >
-          <picture
-            css={{
-              ...getSize(item),
-            }}
-          >
-            <source srcSet={item.srcSet} sizes={item.sizes} />
-            <img src={item.src} css={{ ...getSize(item) }} />
-          </picture>
+          <Img fluid={item} style={{ overflow: 'visible', minWidth: '100%', minHeight: '100%' }} />
           {/* preload */}
           <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} />
           <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} />
