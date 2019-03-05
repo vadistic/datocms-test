@@ -1,7 +1,7 @@
 import { graphql, navigate } from 'gatsby'
 import { StaticQuery } from 'gatsby'
 import { Box, Layer, Text } from 'grommet'
-import { Close, Menu } from 'grommet-icons'
+import { Close, Menu, Revert } from 'grommet-icons'
 import { Button } from 'grommet/components/Button'
 import { Paragraph } from 'grommet/components/Paragraph'
 import React, { useContext, useState } from 'react'
@@ -13,30 +13,48 @@ import { Link } from './link'
 import { Social } from './social'
 import { TagsContext } from './tags'
 
-export const TagLinks: React.FC = () => {
-  const { allTags, setTagsFilter, tagsFilter } = useContext(TagsContext)
+interface FloatingButtonProps {
+  onClick: () => void
+  iconName: 'Close' | 'Menu' | 'Revert'
+  position: 'right' | 'left'
+}
 
-  const handleTagClick = (tag: string) => () => {
-    if (tagsFilter.includes(tag)) {
-      setTagsFilter(tagsFilter.filter(el => el !== tag))
-    } else {
-      setTagsFilter([...tagsFilter, tag])
-    }
-  }
+const FloatingButton: React.FC<FloatingButtonProps> = ({
+  onClick: handleClick,
+  iconName,
+  position,
+}) => {
+  const isSmall = useMedia({ max: 'small' })
+
+  const styles = css`
+    position: fixed;
+    z-index: 20;
+    top: 0;
+
+    ${position === 'right' &&
+      css`
+        right: 6px;
+      `}
+
+    ${position === 'left' &&
+      css`
+        left: 0;
+      `}
+  `
+
+  const Icon = {
+    Close,
+    Menu,
+    Revert,
+  }[iconName]
 
   return (
-    <>
-      {allTags.map(tag => (
-        <Link
-          key={tag}
-          color={tagsFilter.includes(tag) ? 'brand' : 'black'}
-          onClick={handleTagClick(tag)}
-          size="xlarge"
-        >
-          {tag}
-        </Link>
-      ))}
-    </>
+    <Box css={styles}>
+      <Button
+        onClick={handleClick}
+        icon={<Icon size={isSmall ? 'medium' : 'large'} color="black" />}
+      />
+    </Box>
   )
 }
 
@@ -45,7 +63,7 @@ export interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
-  const { setTagsFilter } = useContext(TagsContext)
+  const { allTags, setTagsFilter, tagsFilter } = useContext(TagsContext)
   const theme = useTheme()
   const [open, setOpen] = useState(false)
   const isMobile = useMedia({ max: 'medium' })
@@ -61,26 +79,34 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
     }
   }
 
-  const renderMenuButton = (
-    <Box
-      css={css`
-        position: fixed;
-        right: 18px;
-        top: 0;
-        z-index: 20;
-      `}
-    >
-      <Button
-        onClick={() => setOpen(!open)}
-        icon={open ? <Close size="large" /> : <Menu size="large" />}
-      />
-    </Box>
+  const handleRevert = () => {
+    navigate('/')
+  }
+
+  const renderRevertButton = (
+    <FloatingButton onClick={handleRevert} iconName="Revert" position="left" />
   )
+
+  const renderMenuButton = (
+    <FloatingButton
+      onClick={() => setOpen(!open)}
+      iconName={open ? 'Close' : 'Menu'}
+      position="right"
+    />
+  )
+
+  const handleTagClick = (tag: string) => () => {
+    if (tagsFilter.includes(tag)) {
+      setTagsFilter(tagsFilter.filter(el => el !== tag))
+    } else {
+      setTagsFilter([...tagsFilter, tag])
+    }
+  }
 
   const renderLinks = (
     <>
       <Box className="logo">
-        <Link color="brand" size="xlarge">
+        <Link color="brand" size="xxlarge">
           Logo
         </Link>
       </Box>
@@ -94,7 +120,16 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
       </Box>
       {pageType === PageType.Home && (
         <Box className="tags">
-          <TagLinks />
+          {allTags.map(tag => (
+            <Link
+              key={tag}
+              color={tagsFilter.includes(tag) ? 'brand' : 'black'}
+              onClick={handleTagClick(tag)}
+              size="large"
+            >
+              {tag}
+            </Link>
+          ))}
         </Box>
       )}
     </>
@@ -107,6 +142,21 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
   )
 
   if (!isMobile) {
+    const styles = css`
+      .logo {
+        margin-bottom: ${theme.global.edgeSize.large};
+      }
+
+      .links,
+      .tags {
+        margin-bottom: ${theme.global.edgeSize.medium};
+
+        & > * {
+          margin-bottom: ${theme.global.edgeSize.hair};
+        }
+      }
+    `
+
     return (
       <Box
         justify="between"
@@ -115,23 +165,7 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
         onKeyDown={handleKeyboard}
         tabIndex={0}
       >
-        <Box
-          as="nav"
-          css={css`
-            .logo {
-              margin-bottom: ${theme.global.edgeSize.large};
-            }
-
-            .links,
-            .tags {
-              margin-bottom: ${theme.global.edgeSize.medium};
-
-              & > * {
-                margin-bottom: ${theme.global.edgeSize.hair};
-              }
-            }
-          `}
-        >
+        <Box as="nav" css={styles}>
           {renderLinks}
         </Box>
         <Box as="aside">
@@ -143,9 +177,25 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
   }
 
   if (isMobile) {
+    const mobileStyles = css`
+      .logo {
+        margin-bottom: ${theme.global.edgeSize.large};
+      }
+
+      .links,
+      .tags {
+        margin-bottom: ${theme.global.edgeSize.medium};
+
+        & > * {
+          margin-bottom: ${theme.global.edgeSize.hair};
+        }
+      }
+    `
+
     return (
       <>
         {renderMenuButton}
+        {pageType !== PageType.Home && renderRevertButton}
         {open && (
           <Layer
             full="horizontal"
@@ -156,29 +206,13 @@ export const Navigation: React.FC<NavigationProps> = ({ pageType }) => {
             onEsc={() => setOpen(false)}
           >
             <Box pad="large" justify="evenly" align="center" height={isSmall ? '100%' : undefined}>
-              <Box
-                as="nav"
-                align="center"
-                css={css`
-                  .logo {
-                    margin-bottom: ${theme.global.edgeSize.large};
-                  }
-
-                  .links,
-                  .tags {
-                    margin-bottom: ${theme.global.edgeSize.medium};
-
-                    & > * {
-                      margin-bottom: ${theme.global.edgeSize.hair};
-                    }
-                  }
-                `}
-              >
+              <Box as="nav" align="center" css={mobileStyles}>
                 {renderLinks}
               </Box>
               <Box as="aside" align="center">
-                <Social />
-                <Paragraph textAlign="center">{introText}</Paragraph>
+                <Social iconWrapperProsp={{ pad: 'medium' }} />
+
+                {!isSmall && <Paragraph textAlign="center">{introText}</Paragraph>}
               </Box>
             </Box>
           </Layer>

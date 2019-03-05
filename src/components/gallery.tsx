@@ -1,6 +1,6 @@
 import { navigate } from 'gatsby'
 import Img from 'gatsby-image'
-import { Box, Heading, Stack, Text } from 'grommet'
+import { Box, Heading, Text } from 'grommet'
 import React from 'react'
 import _PhotoGallery, {
   GalleryI,

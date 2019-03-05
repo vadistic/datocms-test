@@ -1,5 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby'
-import { Box } from 'grommet'
+import { Box, BoxProps } from 'grommet'
 import {
   Facebook,
   Github,
@@ -14,46 +14,43 @@ import React from 'react'
 import { SocialQuery } from '../generated/graphql'
 import { Idx } from '../utils'
 
-interface IconComponentProps {
-  profileType: string
+export interface SocialProps {
+  iconProps?: IconProps
+  iconWrapperProsp?: BoxProps
 }
 
-const IconComponent: React.FC<IconComponentProps & IconProps> = ({ profileType, ...rest }) => {
-  switch (profileType) {
-    case 'Instagram':
-      return <Instagram {...rest} />
-    case 'Github':
-      return <Github {...rest} />
-    case 'Twitter':
-      return <Twitter {...rest} />
-    case 'Facebook':
-      return <Facebook {...rest} />
-    case 'Linkedin':
-      return <Linkedin {...rest} />
-    case 'Mail':
-      return <Mail {...rest} />
-    case 'Link':
-    default:
-      return <Link {...rest} />
+export const Social: React.FC<SocialProps> = ({ iconProps = {}, iconWrapperProsp = {} }) => {
+  const Icon = {
+    Instagram,
+    Github,
+    Twitter,
+    Facebook,
+    Linkedin,
+    Mail,
+    Link,
   }
+
+  const renderIcon = (iconName: keyof typeof Icon) => {
+    const Tag = Icon[iconName] || Icon.Link
+    return <Tag size="medium" {...iconProps} />
+  }
+
+  return (
+    <Box direction="row">
+      <StaticQuery<Idx<SocialQuery>> query={SOCIAL_QUERY}>
+        {data =>
+          data.allDatoCmsSocialProfile.edges.map(edge => (
+            <Box key={edge.node.id} pad="xsmall" {...iconWrapperProsp}>
+              <a href={edge.node.url} target="_blank">
+                {renderIcon(edge.node.profileType as any)}
+              </a>
+            </Box>
+          ))
+        }
+      </StaticQuery>
+    </Box>
+  )
 }
-
-export const Social: React.FC = () => (
-  <Box direction="row" wrap margin={{ vertical: 'small' }}>
-    <StaticQuery<Idx<SocialQuery>> query={SOCIAL_QUERY}>
-      {data =>
-        data.allDatoCmsSocialProfile.edges.map(edge => (
-          <Box key={edge.node.id} pad="xsmall">
-            <a href={edge.node.url} target="_blank">
-              <IconComponent size="medium" profileType={edge.node.profileType} />
-            </a>
-          </Box>
-        ))
-      }
-    </StaticQuery>
-  </Box>
-)
-
 const SOCIAL_QUERY = graphql`
   query SocialQuery {
     allDatoCmsSocialProfile {

@@ -70,27 +70,8 @@ export interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children, pageType }) => {
-  const renderBackButton = (
-    <Box
-      css={css`
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 20;
-      `}
-    >
-      <Button
-        onClick={() => {
-          navigate('/')
-        }}
-        icon={<Revert size="large" />}
-      />
-    </Box>
-  )
-
   return (
     <div css={layoutStyles}>
-      {pageType !== PageType.Home && renderBackButton}
       <Navigation pageType={pageType} />
       <main>{children}</main>
       <Footer />
