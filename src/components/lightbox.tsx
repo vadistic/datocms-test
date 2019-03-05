@@ -138,11 +138,10 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
       css={{
         position: 'relative',
         width: '100%',
-        height: '70vh',
+        height: '100%',
         overflow: 'hidden',
         '&:focus': { outline: 'none' },
-        // disable mobile pull to refresh etc.
-        touchAction: 'none',
+        touchAction: 'pan-y',
       }}
     >
       {images.length > 1 && <LightboxControls handlePrev={handlePrev} handleNext={handleNext} />}
@@ -227,7 +226,7 @@ const LightboxControls: React.FC<LightboxControlsProps> = ({ handleNext, handleP
           position: 'absolute',
           bottom: '33%',
           left: 0,
-          zIndex: '123',
+          zIndex: '1',
           cursor: 'pointer',
         }}
         onClick={handlePrev}
@@ -242,7 +241,7 @@ const LightboxControls: React.FC<LightboxControlsProps> = ({ handleNext, handleP
           position: 'absolute',
           bottom: '33%',
           right: 0,
-          zIndex: '123',
+          zIndex: '1',
           cursor: 'pointer',
         }}
         onClick={handleNext}

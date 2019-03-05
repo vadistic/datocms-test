@@ -42,6 +42,5 @@ export const useMedia = (query?: UseMedia) => {
     }
   }
 
-  // for hook reuse in fn body
-  return (_query: UseMedia) => useMedia(_query)
+  return false
 }

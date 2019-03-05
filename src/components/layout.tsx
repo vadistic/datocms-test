@@ -1,6 +1,8 @@
-import { Grommet } from 'grommet'
+import { navigate } from 'gatsby'
+import { Box, Button } from 'grommet'
+import { Revert } from 'grommet-icons'
 import React from 'react'
-import { css, media, theme, ThemeProps } from '../styles'
+import { css, media, ThemeProps } from '../styles'
 import { Footer } from './footer'
 import { Navigation } from './navigation'
 
@@ -13,12 +15,6 @@ const layoutStyles = ({ theme: t }: ThemeProps) => css`
 
   overflow: hidden;
 
-  .navigation {
-    visibility: hidden;
-    position: fixed;
-    padding: ${t.global.edgeSize.large} ${t.global.edgeSize.medium};
-  }
-
   main {
     margin: ${t.global.edgeSize.small};
     min-height: 100vh;
@@ -29,6 +25,12 @@ const layoutStyles = ({ theme: t }: ThemeProps) => css`
   }
 
   ${media.small(css`
+    .navigation {
+      position: fixed;
+      padding: ${t.global.edgeSize.large} ${t.global.edgeSize.medium};
+      width: ${t.global.spacingValue * 10}px;
+    }
+
     main {
       margin: ${t.global.edgeSize.large};
       margin-bottom: 0;
@@ -36,11 +38,6 @@ const layoutStyles = ({ theme: t }: ThemeProps) => css`
   `)}
 
   ${media.medium(css`
-    .navigation {
-      visibility: visible;
-      width: ${t.global.spacingValue * 10}px;
-    }
-
     main {
       margin-left: ${t.global.spacingValue * 10}px;
       margin-right: ${t.global.spacingValue * 4}px;
@@ -73,13 +70,30 @@ export interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children, pageType }) => {
+  const renderBackButton = (
+    <Box
+      css={css`
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 20;
+      `}
+    >
+      <Button
+        onClick={() => {
+          navigate('/')
+        }}
+        icon={<Revert size="large" />}
+      />
+    </Box>
+  )
+
   return (
-    <Grommet theme={theme} full>
-      <div css={layoutStyles}>
-        <Navigation pageType={pageType} />
-        <main>{children}</main>
-        <Footer />
-      </div>
-    </Grommet>
+    <div css={layoutStyles}>
+      {pageType !== PageType.Home && renderBackButton}
+      <Navigation pageType={pageType} />
+      <main>{children}</main>
+      <Footer />
+    </div>
   )
 }

@@ -1,5 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby'
-import { Box, Grid } from 'grommet'
+import { Box } from 'grommet'
 import {
   Facebook,
   Github,
@@ -39,7 +39,7 @@ const IconComponent: React.FC<IconComponentProps & IconProps> = ({ profileType, 
 }
 
 export const Social: React.FC = () => (
-  <Box direction="row-responsive" wrap margin={{ vertical: 'small' }}>
+  <Box direction="row" wrap margin={{ vertical: 'small' }}>
     <StaticQuery<Idx<SocialQuery>> query={SOCIAL_QUERY}>
       {data =>
         data.allDatoCmsSocialProfile.edges.map(edge => (
