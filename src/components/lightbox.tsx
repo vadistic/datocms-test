@@ -1,5 +1,5 @@
 import Img from 'gatsby-image'
-import { Button } from 'grommet'
+import { Button, Stack } from 'grommet'
 import { Next, Previous } from 'grommet-icons'
 import clamp from 'lodash-es/clamp'
 import React, { useMemo, useRef, useState } from 'react'
@@ -16,10 +16,9 @@ export interface LightboxProps {
 export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const ref = useRef<HTMLDivElement>(null)
   const pending = useRef(false)
-  const { height, width } = useSize(ref)
 
   const [index, setIndex] = useState(0)
-  const [fistRender, setFirstRender] = useState(true)
+  const { height, width } = useSize(ref)
 
   const images = [cover, ...gallery].map(img => img.fluid)
   const currentImage = images[index]
@@ -34,22 +33,14 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
     setIndex(i => getPrevIndex(i))
   }
 
-  const transitions = useTransition(currentImage, image => image.src, {
+  const transitions = useTransition(images[index], image => image.src, {
     from: { opacity: 0 },
-    enter: { opacity: fistRender ? 1 : 0 },
-    update: { opacity: 1 },
+    enter: { opacity: 1 },
     leave: { opacity: 0 },
+
     unique: true,
     reset: true,
-    config: config.stiff,
   })
-
-  // hacky, but nvm
-  // the issue is that I want to have opacity enter animation after update
-  // there are ranges, and async fn, but...
-  useMemo(() => {
-    setFirstRender(false)
-  }, [])
 
   // autoplay is probably a cancer, so no
   // useEffect(
@@ -60,7 +51,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
   const [spring, setSpring] = useSpring(() => ({
     xy: [0, 0],
     blur: 0,
-    config: config.default,
+    config: config.gentle,
   }))
 
   // temp var to calculate directional velocity
@@ -117,7 +108,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
         xy: down ? [deltaX, deltaY] : pending.current ? [0, 0] : [deltaXClamp, deltaYClamp],
         blur:
           down && distanceX - maxXOverflow > window.innerWidth / 6
-            ? distanceX - maxXOverflow / 100
+            ? (distanceX - maxXOverflow) / 50
             : 0,
       })
     }
@@ -150,60 +141,72 @@ export const Lightbox: React.FC<LightboxProps> = ({ cover, gallery }) => {
         height: '70vh',
         overflow: 'hidden',
         '&:focus': { outline: 'none' },
-        // disable mobile pull to refresh
-        // touchAction: 'none',
+        // disable mobile pull to refresh etc.
+        touchAction: 'none',
       }}
     >
       {images.length > 1 && <LightboxControls handlePrev={handlePrev} handleNext={handleNext} />}
+      <animated.div
+        {...bind()}
+        style={{
+          // this one actually makes a difference
+          willChange: 'transform',
 
-      {transitions.map(({ item, props, key }) => (
-        <animated.div
-          {...bind()}
-          key={key}
-          style={{
-            ...props,
-            willChange: 'transform',
-            userSelect: 'none',
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            cursor: 'move',
-            // theres and issue with typings for react spring
-            // https://github.com/react-spring/react-spring/issues/571
-            transform: spring.xy.interpolate(((_x: number, _y: number) =>
-              `translate3d(${_x}px, ${_y}px, 0)`) as any),
-            filter: spring.blur.interpolate(val => `blur(${val}px)`),
-          }}
-          /* trying to minimize issues when cursor interacts with other elements durging drag */
-          onDragStart={e => {
-            e.preventDefault()
-          }}
-          onClick={e => {
-            e.preventDefault()
-          }}
-        >
-          <Img
-            fluid={item}
-            style={{
-              overflow: 'visible',
-              // width && heigth trying to prevent resize flash when no observer values
-              minWidth:
-                width && height
-                  ? Math.max(1, (currentImage.aspectRatio * height) / width) * 100 + '%'
-                  : 0,
-              minHeight:
-                width && height
-                  ? Math.max(1, width / (currentImage.aspectRatio * height)) * 100 + '%'
-                  : 0,
-            }}
-          />
-          {/* preload */}
-          <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} />
-          <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} />
-        </animated.div>
-      ))}
+          height: '100%',
+          width: '100%',
+
+          userSelect: 'none',
+          cursor: 'move',
+
+          // theres and issue with typings for react spring
+          // https://github.com/react-spring/react-spring/issues/571
+          transform: spring.xy.interpolate(((_x: number, _y: number) =>
+            `translate3d(${_x}px, ${_y}px, 0)`) as any),
+          filter: spring.blur.interpolate(val => `blur(${val}px)`),
+        }}
+        /* trying to minimize issues when cursor interacts with other elements durging drag */
+        onDragStart={e => {
+          e.preventDefault()
+        }}
+        onClick={e => {
+          e.preventDefault()
+        }}
+      >
+        <Stack fill>
+          {transitions.map(({ item, props, key, state }, i) => (
+            <animated.div
+              key={key}
+              style={{
+                ...props,
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                boxSizing: 'border-box',
+              }}
+            >
+              <Img
+                fluid={item}
+                fadeIn={false}
+                style={{
+                  // y overflow is magically solved with minWidth
+                  minHeight: '100%',
+                  // x overflow needs to be calculated from sensor values
+                  minWidth:
+                    width && height
+                      ? Math.max(100, (item.aspectRatio * height * 100) / width) + '%'
+                      : '100%',
+                  overflow: 'visible',
+                }}
+              />
+            </animated.div>
+          ))}
+        </Stack>
+      </animated.div>
+      {/* preload */}
+      <Img fluid={images[getNextIndex(index)]} css={{ display: 'none' }} fadeIn={false} />
+      <Img fluid={images[getPrevIndex(index)]} css={{ display: 'none' }} fadeIn={false} />
     </div>
   )
 }
@@ -222,7 +225,7 @@ const LightboxControls: React.FC<LightboxControlsProps> = ({ handleNext, handleP
         hoverIndicator
         css={{
           position: 'absolute',
-          bottom: '50%',
+          bottom: '33%',
           left: 0,
           zIndex: '123',
           cursor: 'pointer',
@@ -237,7 +240,7 @@ const LightboxControls: React.FC<LightboxControlsProps> = ({ handleNext, handleP
         hoverIndicator
         css={{
           position: 'absolute',
-          bottom: '50%',
+          bottom: '33%',
           right: 0,
           zIndex: '123',
           cursor: 'pointer',
